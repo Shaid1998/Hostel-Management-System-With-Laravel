@@ -29,7 +29,21 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $notification = array(
+            'message' => 'Login Successfully',
+            'alert-type' => 'success'
+        );
+
+        $url = '';
+        if ($request->user()->role === 'admin') {
+            $url = 'admin/dashboard';
+        } elseif ($request->user()->role === 'worker') {
+            $url = 'worker/dashboard';
+        } elseif ($request->user()->role === 'user') {
+            $url = '/dashboard';
+        }
+
+        return redirect()->intended($url)->with($notification);
     }
 
     /**
@@ -43,6 +57,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('login');
     }
 }
