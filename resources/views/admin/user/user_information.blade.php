@@ -24,6 +24,7 @@
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Email</th>
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Status</th>
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">join Date</th>
+							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Payment Information</th>
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
 						</tr>
 					</thead>

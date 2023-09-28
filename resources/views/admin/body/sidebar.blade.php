@@ -24,7 +24,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{route ('user.information')}}">
+				<a href="{{route ('all.user.information')}}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">User Information</div>
