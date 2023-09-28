@@ -18,7 +18,7 @@
     <link href="{{ asset('adminbackend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('adminbackend/assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('adminbackend/assets/css/icons.css') }}" rel="stylesheet">
-    <title>Admin Login </title>
+    <title>Login Page </title>
 </head>
 
 <body class="bg-login">
@@ -35,7 +35,7 @@
                             <div class="card-body">
                                 <div class="border p-4 rounded">
                                     <div class="text-center">
-                                        <h3 class="">Admin Sign in</h3>
+                                        <h3 class="">Sign In</h3>
                                     </div>
                                     <div class="form-body">
                                         <form class="row g-3" method="POST" action="{{ route('login') }}">
