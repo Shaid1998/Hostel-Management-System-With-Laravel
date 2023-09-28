@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\WorkerController;
+use App\HtUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('userPart.user_Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -52,6 +53,24 @@ Route::middleware(['auth','role:admin'])->group(function() {
 
 /// Worker Dashboard
 
+Route::get('/user/login', [UserController::class, 'UserLogin'])->name('user.login');
+
+Route::middleware(['auth','role:user'])->group(function() {
+    Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashobard');
+    Route::get('/user/logout', [UserController::class, 'UserDestroy'])->name('user.logout');
+    Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile');
+    Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
+    Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');
+    Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
+    Route::get('/user/information', [UserController::class, 'UserInformation'])->name('user.information');
+
+});
+
+
+
+
+/// User Dashboard
+
 Route::get('/worker/login', [WorkerController::class, 'WorkerLogin'])->name('worker.login');
 
 Route::middleware(['auth','role:worker'])->group(function() {
@@ -64,9 +83,4 @@ Route::middleware(['auth','role:worker'])->group(function() {
     Route::get('/user/information', [WorkerController::class, 'UserInformation'])->name('user.information');
 
 });
-
-
-
-
-//Member
 
