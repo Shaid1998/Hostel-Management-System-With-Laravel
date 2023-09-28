@@ -38,15 +38,15 @@ class UserController extends Controller
     } // End Mehtod 
 
 
-    public function WorkerProfile(){
+    public function UserProfile(){
 
         $id = Auth::user()->id;
-        $adminData = User::find($id);
-        return view('userPart.user_profile_view',compact('adminData'));
+        $userData = User::find($id);
+        return view('userPart.user_profile_view',compact('userData'));
 
     } // End Mehtod 
 
-    public function WorkerProfileStore(Request $request){
+    public function UserProfileStore(Request $request){
 
         $id = Auth::user()->id;
         $data = User::find($id);
