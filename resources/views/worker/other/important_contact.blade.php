@@ -1,5 +1,5 @@
-@extends('admin.admin_dashboard')
-@section('admin')
+@extends('worker.worker_dashboard')
+@section('worker')
  
 
 <div style="background-image: linear-gradient(to bottom right, rgb(234, 255, 0), rgb(22, 241, 241));text-align:center;" class="page-content">

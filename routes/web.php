@@ -80,7 +80,7 @@ Route::middleware(['auth','role:worker'])->group(function() {
     Route::post('/worker/profile/store', [WorkerController::class, 'WorkerProfileStore'])->name('worker.profile.store');
     Route::get('/worker/change/password', [WorkerController::class, 'WorkerChangePassword'])->name('worker.change.password');
     Route::post('/worker/update/password', [WorkerController::class, 'WorkerUpdatePassword'])->name('worker.update.password');
-    Route::get('/user/information', [WorkerController::class, 'UserInformation'])->name('user.information');
+    Route::get('/important/contact', [WorkerController::class, 'ImportantContact'])->name('important.contact');
 
 });
 

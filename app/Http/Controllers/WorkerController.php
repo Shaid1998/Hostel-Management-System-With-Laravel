@@ -15,9 +15,9 @@ class WorkerController extends Controller
 
     } // End Mehtod 
 
-    public function UserInformation(){
+    public function ImportantContact(){
 
-        return view('worker.user.user_information');
+        return view('worker.other.important_contact');
 
     } // End Mehtod 
 
@@ -38,11 +38,11 @@ class WorkerController extends Controller
     } // End Mehtod 
 
 
-    public function AdminProfile(){
+    public function WorkerProfile(){
 
         $id = Auth::user()->id;
-        $adminData = User::find($id);
-        return view('worker.worker_profile_view',compact('adminData'));
+        $workerData = User::find($id);
+        return view('worker.worker_profile_view',compact('workerData'));
 
     } // End Mehtod 
 
