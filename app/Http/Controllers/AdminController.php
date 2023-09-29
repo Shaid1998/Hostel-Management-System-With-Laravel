@@ -332,4 +332,17 @@ class AdminController extends Controller
         return view('admin.messages',compact('messages'));
     }//End Method
 
+    public function DeleteMessage($id){
+
+        Message::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Message Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
 }

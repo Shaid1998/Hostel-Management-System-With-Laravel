@@ -40,6 +40,12 @@
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Messages</div>
 				</a>
 			</li>
+			<li>
+				<a href="#">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Noticeboard</div>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<!--end navigation-->

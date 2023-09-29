@@ -34,7 +34,7 @@
                                 <td>{{$messages->email}}</td>
                                 <td>{{$messages->phone}}</td>
                                 <td>{{$messages->designation}}</td>
-                                <td>{{$messages->message}}</td>
+                                <td>{!! nl2br($messages->message) !!}</td>
                                 <td><a href='{{ route ('message.delete',$messages->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a></td>
                             </tr>
 					    </tbody>

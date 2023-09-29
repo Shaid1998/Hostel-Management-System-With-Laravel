@@ -63,6 +63,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/add/new', [AdminController::class, 'AddNew'])->name('add.new');
     Route::post('/admin/add/new/store', [AdminController::class, 'NewStore'])->name('admin.add.new');
     Route::get('/admin/all/message', [AdminController::class, 'AllIncomingMessage'])->name('all.incomeing.messages');
+    Route::get('/admin/message/delete/{id}', [AdminController::class, 'DeleteMessage'])->name('message.delete');
 
 });
 
