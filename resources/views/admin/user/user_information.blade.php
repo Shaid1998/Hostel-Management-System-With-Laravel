@@ -20,6 +20,7 @@
 					<thead class="table-light">
 						<tr>
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Sl</th>
+							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Photo</th>
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Name</th>
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Email</th>
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Status</th>
@@ -28,8 +29,28 @@
 							<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
+					@foreach ($alluser as $alluser)
+						<tbody>
+							<tr>
+								<td>{{$alluser->id}}</td>
+								<td><img src="{{ asset($alluser->photo)}}" height="70px" width="70px" /></td>
+								<td>{{$alluser->name}}</td>
+								<td>{{$alluser->email}}</td>
+								<td>{{$alluser->status}}</td>
+								<td>{{$alluser->created_at}}</td>
+								<td>{{$alluser->payment_info}}</td>
+								<td>
+									
+										<a href='{{ route ('user.information.edit',$alluser->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:green;font-size:20px;cursor:pointer;"  >UPDATE</a>
+									
+									@if (Auth::user()->can('user.information.delete'))
+										<a href='{{ route ('user.delete',$alluser->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:red;font-size:20px;cursor:pointer;"  >DELETE</a>
+									@endif
+								</td>
+							</tr>
+						</tbody>
+					@endforeach
+					
 				</table>
 			</div>
 		</div>

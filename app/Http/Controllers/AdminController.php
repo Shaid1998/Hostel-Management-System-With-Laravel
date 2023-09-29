@@ -17,8 +17,8 @@ class AdminController extends Controller
     } // End Mehtod 
 
     public function UserInformation(){
-
-        return view('admin.user.user_information');
+        $alluser = User::where('role','user')->latest()->get();
+        return view('admin.user.user_information',compact('alluser'));
 
     } // End Mehtod 
 
@@ -46,6 +46,42 @@ class AdminController extends Controller
         return view('admin.admin_profile_view',compact('adminData'));
 
     } // End Mehtod 
+
+    public function EditUser($id){
+        $user = User::findOrFail($id);
+        return view('admin.admin_User_Information_Edit',compact('user'));
+
+    } // End Mehtod
+    
+    public function UpdateUser(Request $request){
+
+        $id = Auth::user()->id;
+        $data = User::find($id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->address = $request->address; 
+
+
+        if ($request->file('photo')) {
+            $file = $request->file('photo');
+            @unlink(public_path('upload/admin_images/'.$data->photo));
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images'),$filename);
+            $data['photo'] = $filename;
+        }
+
+        $data->save();
+
+        $notification = array(
+            'message' => 'Admin Profile Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    } // End Mehtod 
+
 
     public function AdminProfileStore(Request $request){
 
