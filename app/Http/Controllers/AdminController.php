@@ -345,4 +345,9 @@ class AdminController extends Controller
 
     }// End Method
 
+    public function AdminNoticeHome(){
+        //$messages = Message::all();
+        return view('admin.notice.notice_view');
+    }//End Method
+
 }

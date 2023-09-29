@@ -19,31 +19,31 @@
 			<li>
 				<a href="{{ route('admin.dashobard') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-home'></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Dashboard</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">Dashboard</div>
 				</a>
 			</li>
 			<li>
 				<a href="{{route ('all.user.information')}}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">User Information</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">User Information</div>
 				</a>
 			</li>
 			<li>
 				<a href="{{route ('all.worker.information')}}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Worker Information</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">Worker Information</div>
 				</a>
 			</li>
 			<li>
 				<a href="{{ route('all.incomeing.messages') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Messages</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">Messages</div>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="{{route('admin.notice.board')}}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Noticeboard</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">Noticeboard</div>
 				</a>
 			</li>
 		</ul>
