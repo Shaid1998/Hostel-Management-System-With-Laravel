@@ -20,7 +20,7 @@
 				</a>
 			</li>
 			<li style="padding-top: 2rem">
-				<a href="#">
+				<a href="{{ route('visitor.message.contact')}}">
 					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class="fas fa-envelope"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Send Message</div>
