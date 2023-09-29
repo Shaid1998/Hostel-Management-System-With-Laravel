@@ -18,20 +18,19 @@
     <body class="antialiased">
         <div style="background-color:black;" class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                <div style="padding-right: 10rem;padding-top:2rem" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
                         <a href="{{ url('/dashboard') }}" style="font-family: 'Times New Roman', Times, serif;font-size:50px;font-style:italic;" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" style="font-family: 'Times New Roman', Times, serif;font-size:50px;font-style:italic;" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" style="font-family: 'Times New Roman', Times, serif;font-size:50px;font-style:italic;" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
+                        <a href="{{ route('login') }}" style="font-family: 'Times New Roman', Times, serif;font-size:50px;font-style:italic;" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log In</a>
+                        <div style="padding-top: 1rem" class="row">
+                            <a href="{{ route('hostel.information') }}" style="font-family: 'Times New Roman', Times, serif;font-size:50px;font-style:italic;" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Hostel Information</a>
+                        </div>
                     @endauth
                 </div>
             @endif
 
-            <div>
+            <div style="padding-top: 10rem" class="row">
                 <h4  style="font-family: Arial, Helvetica, sans-serif;font-size:100px;color:#e5e7eb;font-style:italic;">Welcome To </h4>
                 <h1 style="font-family: 'Times New Roman', Times, serif;font-size:230px;font-style:italic;color:#e5e7eb">CITY HOSTEL </h1>
             </div>
