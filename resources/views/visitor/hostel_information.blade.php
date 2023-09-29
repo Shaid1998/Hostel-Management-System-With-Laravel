@@ -130,29 +130,34 @@
                     </div>
                 </div><!--end row-->
                 <div class="card radius-10">
-                    <div class="card-body">
+                    <div style="background-color: black" class="card-body">
                         <div class="d-flex align-items-center">
-                            <div>
-                                <h5 class="mb-0">Orders Summary</h5>
-                            </div>
-                            <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
+                            <div style="background-color: black">
+                                <h5 style="font-family: Arial, Helvetica, sans-serif;font-weight:800;font-size:50px;font-style:italic;color:rgb(250, 94, 146)" class="mb-0">Services List</h5>
                             </div>
                         </div>
                         <hr>
-                        <div class="table-responsive">
-                            <table class="table align-middle mb-0">
-                                <thead class="table-light">
+                        <div class="table-responsive overflow-x:auto">
+                            <table style="" class="table align-middle mb-0">
+                                <thead class="table-dark">
                                     <tr>
-                                        <th>Sl</th>
-                                        <th>Date</th>
-                                        <th>Invoice</th>
-                                        <th>Amount</th>
-                                        <th>Payment</th>
-                                        <th>Status</th> 
+                                        <th style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:20px;font-style:italic;color:rgb(251, 247, 21)">Sl</th>
+                                        <th style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:20px;font-style:italic;color:rgb(251, 247, 21)">Service</th>
+                                        <th style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:20px;font-style:italic;color:rgb(251, 247, 21)">Status</th>
+                                        <th style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:20px;font-style:italic;color:rgb(251, 247, 21)">Cost</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                @foreach ($serviceall as $serviceall)
+                                    <tbody>
+                                    <tr>
+                                        <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->id}}</td>
+                                        <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->service_name}}</td>
+                                        <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->service_status}}</td>
+                                        <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->service_cost}}</td>
+                                    </tr>
                                 </tbody>
+                                @endforeach
+                                
                             </table>
                         </div>
                     </div>
