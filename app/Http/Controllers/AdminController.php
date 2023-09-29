@@ -29,6 +29,12 @@ class AdminController extends Controller
 
     } // End Mehtod
 
+    
+    public function AddNew(){
+        return view('admin.new_add');
+
+    } // End Mehtod
+
 
     public function AdminLogin(){
         return view('admin.admin_login');
@@ -65,6 +71,34 @@ class AdminController extends Controller
         return view('admin.admin_User_Information_Edit',compact('user'));
 
     } // End Mehtod
+
+    public function NewStore(Request $request){
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
+        $save_url = 'upload/user_images/'.$name_gen;
+
+
+        User::insert([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' =>Hash::make($request->password),
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'status' => $request->status,
+            'role' => $request->role,
+            'payment_info' => $request->payment_info,
+            'photo' => $save_url
+        ]);
+
+       $notification = array(
+            'message' => 'New People Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.dashobard')->with($notification);
+    }//End Method
     
     public function UpdateUser(Request $request){
         $id = $request->id;
