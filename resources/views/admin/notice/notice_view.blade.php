@@ -11,8 +11,8 @@
 		<div class="card-body">
 			<div class=" align-items-center">
 				<div class="row">
-					<div style="width: 50%;padding-top:1.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Notification</h5></div>
-					<div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{ route ('add.new')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW NOTICE</a></div>
+					<div style="width: 50%;padding-top:1.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Notice</h5></div>
+					<div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{ route ('add.new.notice')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW NOTICE</a></div>
 				</div>
 			</div>
 		</div>
@@ -22,16 +22,32 @@
 				<thead class="table-light">
 					<tr>
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Sl</th>
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Photo</th>
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Name</th>
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Email</th>
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Status</th>
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">join Date</th>
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Payment Information</th>
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Post Date & Time</th>
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Update Date & Time</th>
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Notice Topic</th>
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Notice For</th>
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Alart Type</th>
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Notice Details</th>
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th>
 					</tr>
 				</thead>
-					
+					@foreach ($notice as $notice)
+                        <tbody>
+                            <tr>
+                                <td>{{$notice->id}}</td>
+                                <td>{{$notice->created_at}}</td>
+                                <td>{{$notice->updated_at}}</td>
+                                <td>{{$notice->notice_topic}}</td>
+                                <td>{{$notice->notice_for}}</td>
+                                <td>{{$notice->notice_Alart}}</td>
+                                <td>{!! nl2br ($notice->notice_details) !!}</td>
+                                <td>
+                                    <a href='{{ route ('user.information.edit',$alluser->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >UPDATE</a>
+								    <a href='{{ route ('user.delete',$alluser->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    @endforeach
 				</table>
 			</div>
 		</div>

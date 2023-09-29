@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Middleware\Role;
 use App\Models\User;
 use App\Models\Message;
+use App\Models\Notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -346,8 +347,12 @@ class AdminController extends Controller
     }// End Method
 
     public function AdminNoticeHome(){
-        //$messages = Message::all();
-        return view('admin.notice.notice_view');
+        $notice = Notice::all();
+        return view('admin.notice.notice_view',compact('notice'));
+    }//End Method
+
+    public function AdminAddNotice(){
+        return view('admin.notice.add_new_notice');
     }//End Method
 
 }
