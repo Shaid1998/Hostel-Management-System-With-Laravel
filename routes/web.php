@@ -50,7 +50,9 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/user/information/edit/{id}', [AdminController::class, 'EditUser'])->name('user.information.edit');
     Route::get('/admin/user/delete/{id}', [AdminController::class, 'DeleteUser'])->name('user.delete');
     Route::post('/admin/user/information/update', [AdminController::class, 'UpdateUser'])->name('admin.update.user');
-
+    Route::get('/all/worker/information', [AdminController::class, 'WorkerInformation'])->name('all.worker.information');
+    Route::get('/admin/worker/information/edit/{id}', [AdminController::class, 'EditWorker'])->name('worker.information.edit');
+    Route::get('/admin/worker/delete/{id}', [AdminController::class, 'DeleteWorker'])->name('worker.delete');
 });
 
 

@@ -18,22 +18,25 @@
 		<ul class="metismenu" id="menu">
 			<li>
 				<a href="{{ route('admin.dashobard') }}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='bx bx-home-circle'></i>
-					</div>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-home'></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Dashboard</div>
 				</a>
 			</li>
 			<li>
 				<a href="{{route ('all.user.information')}}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i>
-					</div>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">User Information</div>
 				</a>
 			</li>
 			<li>
+				<a href="{{route ('all.worker.information')}}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Worker Information</div>
+				</a>
+			</li>
+			<li>
 				<a href=" ">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
-					</div>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Messages</div>
 				</a>
 			</li>

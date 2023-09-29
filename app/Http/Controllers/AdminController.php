@@ -23,6 +23,12 @@ class AdminController extends Controller
 
     } // End Mehtod 
 
+    public function WorkerInformation(){
+        $allworker = User::where('role','worker')->latest()->get();
+        return view('admin.worker.worker_information',compact('allworker'));
+
+    } // End Mehtod
+
 
     public function AdminLogin(){
         return view('admin.admin_login');
@@ -49,6 +55,12 @@ class AdminController extends Controller
     } // End Mehtod 
 
     public function EditUser($id){
+        $user = User::findOrFail($id);
+        return view('admin.admin_User_Information_Edit',compact('user'));
+
+    } // End Mehtod
+
+    public function EditWorker($id){
         $user = User::findOrFail($id);
         return view('admin.admin_User_Information_Edit',compact('user'));
 
@@ -92,7 +104,7 @@ class AdminController extends Controller
                 'payment_info' => $request->payment_info,
             ]);
            $notification = array(
-                'message' => 'User Information Updated Successfully',
+                'message' => 'Information Updated Successfully',
                 'alert-type' => 'success'
             );
                 return redirect()->back()->with($notification); 
@@ -105,6 +117,19 @@ class AdminController extends Controller
 
         $notification = array(
             'message' => 'User Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function DeleteWorker($id){
+
+        User::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Worker Deleted Successfully',
             'alert-type' => 'success'
         );
 
