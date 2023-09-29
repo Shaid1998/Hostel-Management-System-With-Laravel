@@ -6,14 +6,14 @@
 	<div>
 		<ul class="metismenu" id="menu">
 			<li style="padding-top: 10rem">
-				<a href="{{ route('worker.dashobard') }}">
+				<a href="{{ route('hostel.home') }}">
 					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class='bx bx-home-circle'></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Home</div>
 				</a>
 			</li>
 			<li style="padding-top: 2rem">
-				<a href="{{ route ('important.contact')}}">
+				<a href="{{ route ('hostel.contact')}}">
 					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class="fas fa-user-check"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Contact</div>

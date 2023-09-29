@@ -31,7 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 Route::get('/hostel/information', [GuestController::class, 'HostelInformation'])->name('hostel.information');
+Route::get('/hostel/home', [GuestController::class, 'HostelHome'])->name('hostel.home');
+Route::get('/hostel/contact', [GuestController::class, 'HostelContact'])->name('hostel.contact');
 
 require __DIR__.'/auth.php';
 
