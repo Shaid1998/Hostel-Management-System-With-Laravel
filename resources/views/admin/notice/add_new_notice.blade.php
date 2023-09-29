@@ -24,7 +24,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new') }}" enctype="multipart/form-data" >
+                            <form id="myForm" method="post" action="{{ route('admin.notice.store') }}" enctype="multipart/form-data" >
                                 @csrf
                                 <input type="hidden" name="id" >
                                         
@@ -53,10 +53,10 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <select name='notice_for' required>
                                             <option value="">Select One</option>
-                                            <option value="All">All</option>
-                                            <option value="Admin">Admin</option>
-                                            <option value="User">User</option>
-                                            <option value="Guest">Guest</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
+                                            <option value="worker">User</option>
+                                            <option value="visitor">Guest</option>
                                         </select>
                                     </div>
                                 </div>

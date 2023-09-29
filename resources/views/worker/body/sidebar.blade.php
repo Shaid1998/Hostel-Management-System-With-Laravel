@@ -5,8 +5,8 @@
 		$workerData = App\Models\User::find($id);
 	@endphp	
 	<div class="user-profile text-center mt-3">
-		<div class="">
-			<img src="{{$workerData->photo}}" style="height: 70px;width:70px;" class="avatar-md rounded-circle">
+		<div>
+			<img src="{{$workerData->photo}}" class="avatar-sm rounded-circle">
 		</div>
 		<div class="mt-3">
 			<h4 style="color:rgb(0, 30, 255);font-size:40px;" class="font-size-16 mb-1">{{$workerData->username}}</h4>

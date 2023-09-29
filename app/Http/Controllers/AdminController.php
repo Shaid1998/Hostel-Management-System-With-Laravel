@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\Role;
+use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
 use App\Models\Message;
 use App\Models\Notice;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -353,6 +355,10 @@ class AdminController extends Controller
 
     public function AdminAddNotice(){
         return view('admin.notice.add_new_notice');
+    }//End Method
+
+    public function NewNoticeStore(Request $request){
+        
     }//End Method
 
 }

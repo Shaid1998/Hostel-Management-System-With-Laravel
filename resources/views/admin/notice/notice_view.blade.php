@@ -31,23 +31,7 @@
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th>
 					</tr>
 				</thead>
-					@foreach ($notice as $notice)
-                        <tbody>
-                            <tr>
-                                <td>{{$notice->id}}</td>
-                                <td>{{$notice->created_at}}</td>
-                                <td>{{$notice->updated_at}}</td>
-                                <td>{{$notice->notice_topic}}</td>
-                                <td>{{$notice->notice_for}}</td>
-                                <td>{{$notice->notice_Alart}}</td>
-                                <td>{!! nl2br ($notice->notice_details) !!}</td>
-                                <td>
-                                    <a href='{{ route ('user.information.edit',$alluser->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >UPDATE</a>
-								    <a href='{{ route ('user.delete',$alluser->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    @endforeach
+					
 				</table>
 			</div>
 		</div>
