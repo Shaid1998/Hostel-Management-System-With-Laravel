@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Image;
 
 class AdminController extends Controller
 {
@@ -54,27 +55,31 @@ class AdminController extends Controller
     } // End Mehtod
     
     public function UpdateUser(Request $request){
-
-        $id = Auth::user()->id;
-        $data = User::find($id);
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->address = $request->address; 
-
+        $id = $request->id;
+        $old_img = $request->old_image;
 
         if ($request->file('photo')) {
-            $file = $request->file('photo');
-            @unlink(public_path('upload/admin_images/'.$data->photo));
-            $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images'),$filename);
-            $data['photo'] = $filename;
+
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
+        $save_url = 'upload/user_images/'.$name_gen;
+
+        if (file_exists($old_img)) {
+           unlink($old_img);
         }
+    }
 
-        $data->save();
+        User::findOrFail($id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'status' => $request->status,
+            'payment_info' => $request->payment_info,
+            'photo' => $save_url
+        ]);
 
-        $notification = array(
-            'message' => 'Admin Profile Updated Successfully',
+       $notification = array(
+            'message' => 'User Information Updated Successfully',
             'alert-type' => 'success'
         );
 
@@ -122,7 +127,7 @@ class AdminController extends Controller
         // Validation 
         $request->validate([
             'old_password' => 'required',
-            'new_password' => 'required|confirmed', 
+            'new_password' => 'required|numeric|confirmed|min:8', 
         ]);
 
         // Match The Old Password
