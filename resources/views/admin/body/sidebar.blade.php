@@ -35,7 +35,7 @@
 				</a>
 			</li>
 			<li>
-				<a href=" ">
+				<a href="{{ route('all.incomeing.messages') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Messages</div>
 				</a>

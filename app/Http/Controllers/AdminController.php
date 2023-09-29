@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Middleware\Role;
 use App\Models\User;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -236,56 +237,6 @@ class AdminController extends Controller
     } // End Mehtod 
 
 
-
-    public function InactiveVendor(){
-        $inActiveVendor = User::where('status','inactive')->where('role','vendor')->latest()->get();
-        return view('backend.vendor.inactive_vendor',compact('inActiveVendor'));
-
-    }// End Mehtod 
-
-
-    public function ActiveVendor(){
-        $ActiveVendor = User::where('status','active')->where('role','vendor')->latest()->get();
-        return view('backend.vendor.active_vendor',compact('ActiveVendor'));
-
-    }// End Mehtod 
-
-
-    public function InactiveVendorDetails($id){
-
-        $inactiveVendorDetails = User::findOrFail($id);
-        return view('backend.vendor.inactive_vendor_details',compact('inactiveVendorDetails'));
-
-    }// End Mehtod 
-
-
-
-
-
-    public function ActiveVendorDetails($id){
-
-        $activeVendorDetails = User::findOrFail($id);
-        return view('backend.vendor.active_vendor_details',compact('activeVendorDetails'));
-
-    }// End Mehtod 
-
-
-     public function InActiveVendorApprove(Request $request){
-
-        $verdor_id = $request->id;
-        $user = User::findOrFail($verdor_id)->update([
-            'status' => 'inactive',
-        ]);
-
-        $notification = array(
-            'message' => 'Vendor InActive Successfully',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->route('inactive.vendor')->with($notification);
-
-    }// End Mehtod 
-
  
      ///////////// Admin All Method //////////////
 
@@ -375,5 +326,10 @@ class AdminController extends Controller
         return redirect()->back()->with($notification);
 
     }// End Mehtod 
+
+    public function AllIncomingMessage(){
+        $messages = Message::all();
+        return view('admin.messages',compact('messages'));
+    }//End Method
 
 }
