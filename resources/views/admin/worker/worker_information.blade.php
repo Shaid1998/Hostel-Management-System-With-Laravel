@@ -31,7 +31,7 @@
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
 					</tr>
 				</thead>
-					@foreach ($allworker as $allworker)
+					@foreach ($all as $allworker)
 					<tbody>
 						<tr>
 							<td>{{$allworker->id}}</td>

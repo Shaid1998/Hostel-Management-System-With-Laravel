@@ -23,9 +23,17 @@ class AdminController extends Controller
 
     } // End Mehtod 
 
-    public function WorkerInformation(){
-        $allworker = User::where('role','worker')->latest()->get();
-        return view('admin.worker.worker_information',compact('allworker'));
+    public function WorkerInformation(Request $request){
+        $search =$request['search'] ?? "";
+
+        if ($search != "") {
+            $all = User::where('name','LIKE','%$search%')->get()->all();
+        }else{
+            
+        }
+        $all = User::where('role','worker')->get()->all();
+        
+        return view('admin.worker.worker_information',compact('all'));
 
     } // End Mehtod
 
