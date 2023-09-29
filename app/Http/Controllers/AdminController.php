@@ -68,7 +68,6 @@ class AdminController extends Controller
         if (file_exists($old_img)) {
            unlink($old_img);
         }
-    }
 
         User::findOrFail($id)->update([
             'name' => $request->name,
@@ -83,9 +82,35 @@ class AdminController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification);
+            return redirect()->back()->with($notification);
+        }else {
 
+            User::findOrFail($id)->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'status' => $request->status,
+                'payment_info' => $request->payment_info,
+            ]);
+           $notification = array(
+                'message' => 'User Information Updated Successfully',
+                'alert-type' => 'success'
+            );
+                return redirect()->back()->with($notification); 
+       }
     } // End Mehtod 
+
+    public function DeleteUser($id){
+
+        User::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'User Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
 
 
     public function AdminProfileStore(Request $request){
@@ -105,7 +130,6 @@ class AdminController extends Controller
             $file->move(public_path('upload/admin_images'),$filename);
             $data['photo'] = $filename;
         }
-
         $data->save();
 
         $notification = array(

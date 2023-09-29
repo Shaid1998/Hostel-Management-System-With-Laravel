@@ -40,12 +40,8 @@
 								<td>{{$alluser->created_at}}</td>
 								<td>{{$alluser->payment_info}}</td>
 								<td>
-									
-										<a href='{{ route ('user.information.edit',$alluser->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:green;font-size:20px;cursor:pointer;"  >UPDATE</a>
-									
-									@if (Auth::user()->can('user.information.delete'))
-										<a href='{{ route ('user.delete',$alluser->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:red;font-size:20px;cursor:pointer;"  >DELETE</a>
-									@endif
+									<button href='{{ route ('user.information.edit',$alluser->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >UPDATE</button>
+									<button href='{{ route ('user.delete',$alluser->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</button>
 								</td>
 							</tr>
 						</tbody>
