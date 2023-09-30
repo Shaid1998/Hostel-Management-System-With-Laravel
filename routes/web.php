@@ -79,6 +79,9 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/service/information/edit/{id}', [AdminController::class, 'EditService'])->name('service.information.edit');
     Route::post('/admin/service/information/update', [AdminController::class, 'UpdateService'])->name('admin.update.service');
     Route::get('/admin/service/delete/{id}', [AdminController::class, 'DeleteService'])->name('service.delete');
+    Route::get('/admin/gallary/photo/edit/{id}', [AdminController::class, 'EditGPhoto'])->name('photo.edit.gallary');
+    Route::get('/admin/photo/gallary/delete/{id}', [AdminController::class, 'DeleteGPhoto'])->name('photo.delete.gallary');
+    Route::post('/admin/gallary/photo/update', [AdminController::class, 'UpdateGPhoto'])->name('admin.edit.gallary.photo');
 
 });
 

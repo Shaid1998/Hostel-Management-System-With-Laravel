@@ -437,6 +437,12 @@ class AdminController extends Controller
 
     } // End Mehtod
 
+    public function EditGPhoto($id){
+        $photo = PhotoGallary::findOrFail($id);
+        return view('admin.other.edit_image',compact('photo'));
+
+    } // End Mehtod
+
     public function UpdateService(Request $request){
         $id = $request->id;
        
@@ -462,6 +468,63 @@ class AdminController extends Controller
 
         $notification = array(
             'message' => 'Service Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function UpdateGPhoto(Request $request){
+        $id = $request->id;
+        $old_img = $request->old_image;
+
+        if ($request->file('photo')) {
+
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/admin_images/site/'.$name_gen);
+        $save_url = 'upload/admin_images/site/'.$name_gen;
+
+        if (file_exists($old_img)) {
+           unlink($old_img);
+        }
+
+        PhotoGallary::findOrFail($id)->update([
+            'photo_title' => $request->photo_title,
+            'photo_credit' => $request->photo_credit,
+            'photo_for' => $request->photo_for,
+            'photo' => $save_url
+        ]);
+
+       $notification = array(
+            'message' => 'Information Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.other.photo.option')->with($notification);
+        }else {
+
+            PhotoGallary::findOrFail($id)->update([
+                'photo_title' => $request->photo_title,
+                'photo_credit' => $request->photo_credit,
+                'photo_for' => $request->photo_for,
+                'photo' => $save_url,
+            ]);
+           $notification = array(
+                'message' => 'Photo And PhotoInformation Updated Successfully',
+                'alert-type' => 'success'
+            );
+                return redirect()->route('admin.other.photo.option')->with($notification); 
+       }
+    } // End Mehtod 
+
+    public function DeleteGPhoto($id){
+
+        PhotoGallary::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Gallary Photo Deleted Successfully',
             'alert-type' => 'success'
         );
 
