@@ -348,6 +348,19 @@ class AdminController extends Controller
 
     }// End Method
 
+    public function DeleteNotice($id){
+
+        Notice::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Notice Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
     public function AdminNoticeHome(){
         $notice = Notice::all();
         return view('admin.notice.notice_view',compact('notice'));
@@ -358,7 +371,19 @@ class AdminController extends Controller
     }//End Method
 
     public function NewNoticeStore(Request $request){
-        
+        Notice::insert([
+            'notice_topic' => $request->notice_topic,
+            'notice_details' => $request->notice_details,
+            'notice_for' => $request->notice_for,
+            'notice_Alart' => $request->notice_Alart,
+        ]);
+
+       $notification = array(
+            'message' => 'New Notice Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.notice.board')->with($notification);
     }//End Method
 
 }

@@ -64,6 +64,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/add/new/store', [AdminController::class, 'NewStore'])->name('admin.add.new');
     Route::get('/admin/all/message', [AdminController::class, 'AllIncomingMessage'])->name('all.incomeing.messages');
     Route::get('/admin/message/delete/{id}', [AdminController::class, 'DeleteMessage'])->name('message.delete');
+    Route::get('/admin/notice/delete/{id}', [AdminController::class, 'DeleteNotice'])->name('delete.notice');
     Route::get('/admin/notice/home', [AdminController::class, 'AdminNoticeHome'])->name('admin.notice.board');
     Route::get('/admin/add/notice', [AdminController::class, 'AdminAddNotice'])->name('add.new.notice');
     Route::post('/admin/add/new/notice/store', [AdminController::class, 'NewNoticeStore'])->name('admin.notice.store');

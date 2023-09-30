@@ -26,6 +26,13 @@
 					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Send Message</div>
 				</a>
 			</li>
+			<li style="padding-top: 2rem">
+				<a href="#">
+					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class="fas fa-image"></i>
+					</div>
+					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Gallary</div>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<!--end navigation-->
