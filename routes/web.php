@@ -70,6 +70,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/add/notice', [AdminController::class, 'AdminAddNotice'])->name('add.new.notice');
     Route::get('/admin/other/option', [AdminController::class, 'AdminOtherOption'])->name('admin.other.option');
     Route::get('/admin/other/photo/option', [AdminController::class, 'AdminOtherPhotoOption'])->name('admin.other.photo.option');
+    Route::get('/admin/other/service/option', [AdminController::class, 'AdminOtherServiceOption'])->name('admin.other.service.option');
     Route::get('/admin/add/photo', [AdminController::class, 'AdminAddPhoto'])->name('add.new.photo');
     Route::post('/admin/add/new/notice/store', [AdminController::class, 'NewNoticeStore'])->name('admin.notice.store');
     Route::post('/admin/add/new/photo/store', [AdminController::class, 'NewPhotoStore'])->name('admin.add.new.photo.store');

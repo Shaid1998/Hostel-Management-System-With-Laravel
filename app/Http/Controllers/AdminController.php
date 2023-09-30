@@ -381,6 +381,11 @@ class AdminController extends Controller
         return view('admin.other.image',compact('data'));
     }//End Method
 
+    public function AdminOtherServiceOption(){
+        $data = Service::all();
+        return view('admin.other.services',compact('data'));
+    }//End Method
+
     public function AdminAddPhoto(){
         return view('admin.other.add_image');
     }//End Method
