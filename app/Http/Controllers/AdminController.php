@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Middleware\Role;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\ContactForGuest;
 use App\Models\User;
 use App\Models\Message;
 use App\Models\Notice;
+use App\Models\PhotoGallary;
+use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -239,20 +242,10 @@ class AdminController extends Controller
 
     } // End Mehtod 
 
-
- 
-     ///////////// Admin All Method //////////////
-
-
     public function AllAdmin(){
         $alladminuser = User::where('role','admin')->latest()->get();
         return view('backend.admin.all_admin',compact('alladminuser'));
     }// End Mehtod 
-
-
-
-
-
 
     public function AdminUserStore(Request $request){
 
@@ -279,12 +272,6 @@ class AdminController extends Controller
         return redirect()->route('all.admin')->with($notification);
 
     }// End Mehtod 
-
-
-
-
-
-
 
     public function AdminUserUpdate(Request $request,$id){
 
@@ -387,7 +374,8 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminOtherOption(){
-        return view('admin.other.home');
+        $data = PhotoGallary::all();
+        return view('admin.other.image',compact('data'));
     }//End Method
 
 }
