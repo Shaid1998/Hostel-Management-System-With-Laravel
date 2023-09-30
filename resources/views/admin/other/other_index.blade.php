@@ -27,7 +27,7 @@
             </a>
 		</div>
 		<div class="col">
-            <a href="{{route('admin.other.photo.option')}}">
+            <a href="{{route('admin.other.contact.option')}}">
                 <div style="height: 250px;width:100%;text-align:center" class="card radius-10 bg-gradient-ohhappiness">
                     <div class="card-body">
                         <div class=" align-items-center text-white">

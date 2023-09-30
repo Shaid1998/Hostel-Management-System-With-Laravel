@@ -386,8 +386,17 @@ class AdminController extends Controller
         return view('admin.other.services',compact('data'));
     }//End Method
 
+    public function AdminOtherContactOption(){
+        $data = ContactForGuest::all();
+        return view('admin.other.contact',compact('data'));
+    }//End Method
+
     public function AdminAddPhoto(){
         return view('admin.other.add_image');
+    }//End Method
+
+    public function AdminAddContact(){
+        return view('admin.other.add_contact');
     }//End Method
 
     public function AdminAddService(){

@@ -68,13 +68,10 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/notice/delete/{id}', [AdminController::class, 'DeleteNotice'])->name('delete.notice');
     Route::get('/admin/notice/home', [AdminController::class, 'AdminNoticeHome'])->name('admin.notice.board');
     Route::get('/admin/add/notice', [AdminController::class, 'AdminAddNotice'])->name('add.new.notice');
-    Route::get('/admin/other/option', [AdminController::class, 'AdminOtherOption'])->name('admin.other.option');
-    Route::get('/admin/other/photo/option', [AdminController::class, 'AdminOtherPhotoOption'])->name('admin.other.photo.option');
-    Route::get('/admin/other/service/option', [AdminController::class, 'AdminOtherServiceOption'])->name('admin.other.service.option');
-    Route::get('/admin/add/photo', [AdminController::class, 'AdminAddPhoto'])->name('add.new.photo');
-    Route::get('/admin/add/service', [AdminController::class, 'AdminAddService'])->name('add.new.service');
     Route::post('/admin/add/new/notice/store', [AdminController::class, 'NewNoticeStore'])->name('admin.notice.store');
-    Route::post('/admin/add/new/photo/store', [AdminController::class, 'NewPhotoStore'])->name('admin.add.new.photo.store');
+    Route::get('/admin/other/service/option', [AdminController::class, 'AdminOtherServiceOption'])->name('admin.other.service.option');
+    Route::get('/admin/other/option', [AdminController::class, 'AdminOtherOption'])->name('admin.other.option');
+    Route::get('/admin/add/service', [AdminController::class, 'AdminAddService'])->name('add.new.service');
     Route::post('/admin/add/new/service/store', [AdminController::class, 'NewServiceStore'])->name('admin.add.new.service.store');
     Route::get('/admin/service/information/edit/{id}', [AdminController::class, 'EditService'])->name('service.information.edit');
     Route::post('/admin/service/information/update', [AdminController::class, 'UpdateService'])->name('admin.update.service');
@@ -82,7 +79,11 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/gallary/photo/edit/{id}', [AdminController::class, 'EditGPhoto'])->name('photo.edit.gallary');
     Route::get('/admin/photo/gallary/delete/{id}', [AdminController::class, 'DeleteGPhoto'])->name('photo.delete.gallary');
     Route::post('/admin/gallary/photo/update', [AdminController::class, 'UpdateGPhoto'])->name('admin.edit.gallary.photo');
-
+    Route::post('/admin/add/new/photo/store', [AdminController::class, 'NewPhotoStore'])->name('admin.add.new.photo.store');
+    Route::get('/admin/add/photo', [AdminController::class, 'AdminAddPhoto'])->name('add.new.photo');
+    Route::get('/admin/other/photo/option', [AdminController::class, 'AdminOtherPhotoOption'])->name('admin.other.photo.option');
+    Route::get('/admin/other/contact/option', [AdminController::class, 'AdminOtherContactOption'])->name('admin.other.contact.option');
+    Route::get('/admin/add/contact', [AdminController::class, 'AdminAddContact'])->name('add.new.contact');
 });
 
 
