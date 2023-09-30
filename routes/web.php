@@ -72,8 +72,13 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/other/photo/option', [AdminController::class, 'AdminOtherPhotoOption'])->name('admin.other.photo.option');
     Route::get('/admin/other/service/option', [AdminController::class, 'AdminOtherServiceOption'])->name('admin.other.service.option');
     Route::get('/admin/add/photo', [AdminController::class, 'AdminAddPhoto'])->name('add.new.photo');
+    Route::get('/admin/add/service', [AdminController::class, 'AdminAddService'])->name('add.new.service');
     Route::post('/admin/add/new/notice/store', [AdminController::class, 'NewNoticeStore'])->name('admin.notice.store');
     Route::post('/admin/add/new/photo/store', [AdminController::class, 'NewPhotoStore'])->name('admin.add.new.photo.store');
+    Route::post('/admin/add/new/service/store', [AdminController::class, 'NewServiceStore'])->name('admin.add.new.service.store');
+    Route::get('/admin/service/information/edit/{id}', [AdminController::class, 'EditService'])->name('service.information.edit');
+    Route::post('/admin/service/information/update', [AdminController::class, 'UpdateService'])->name('admin.update.service');
+    Route::get('/admin/service/delete/{id}', [AdminController::class, 'DeleteService'])->name('service.delete');
 
 });
 

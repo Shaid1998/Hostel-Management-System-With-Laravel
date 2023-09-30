@@ -6,13 +6,13 @@
 <div class="page-content"> 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">ADD NEW PEOPLE</div>
+        <div class="breadcrumb-title pe-3">EDIT SERVICE</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">ADD NEW </li>
+                    <li class="breadcrumb-item active" aria-current="page">TYPE CHANGES </li>
                 </ol>
             </nav>
         </div>
@@ -24,16 +24,16 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new.service.store') }}" enctype="multipart/form-data" >
+                            <form id="myForm" method="post" action="{{ route('admin.update.service') }}">
                                 @csrf
-                                <input type="hidden" name="id" >
+                                <input type="hidden" name="id" value="{{ $service->id }}">
                                         
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Service Name</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="service_name" class="form-control" placeholder="Service Name" required  />
+                                        <input type="text" name="service_name" value="{{ $service->service_name }}" class="form-control"  />
                                     </div>
                                 </div>
 
@@ -42,7 +42,7 @@
                                         <h6 class="mb-0">Service Status</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="service_status" class="form-control" placeholder="Service Status" required   />
+                                        <input type="text" name="service_status" value="{{ $service->service_status }}" class="form-control" />
                                     </div>
                                 </div>
 
@@ -51,14 +51,14 @@
                                         <h6 class="mb-0">Service Cost</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="service_cost" class="form-control" placeholder="Service Cost" required   />
+                                        <input type="text" name="service_cost" value="{{ $service->service_cost }}" class="form-control" />
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="submit" class="btn btn-primary px-4" value="Upload  Service" />
+                                        <input type="submit" class="btn btn-primary px-4" value="Update Service" />
                                     </div>
                                 </div>
                             </div>
@@ -77,9 +77,9 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                service_name: {required : true,}, 
-                service_status: {required : true,}, 
-                service_cost: {required : true,}, 
+                service_name: {required : false,}, 
+                service_status: {required : false,}, 
+                service_cost: {required : false,}, 
             },
             messages :{
                 service_name: {required : 'Please Enter Service Name',},

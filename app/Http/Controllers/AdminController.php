@@ -139,7 +139,7 @@ class AdminController extends Controller
         ]);
 
        $notification = array(
-            'message' => 'User Information Updated Successfully',
+            'message' => 'Information Updated Successfully',
             'alert-type' => 'success'
         );
 
@@ -390,6 +390,10 @@ class AdminController extends Controller
         return view('admin.other.add_image');
     }//End Method
 
+    public function AdminAddService(){
+        return view('admin.other.add_service');
+    }//End Method
+
     public function NewPhotoStore(Request $request){
         $image = $request->file('photo');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
@@ -411,5 +415,58 @@ class AdminController extends Controller
 
             return redirect()->route('admin.other.photo.option')->with($notification);
     }//End Method
+
+    public function NewServiceStore(Request $request){
+        Service::insert([
+            'service_name' => $request->service_name,
+            'service_status' => $request->service_status,
+            'service_cost' => $request->service_cost,
+        ]);
+
+       $notification = array(
+            'message' => 'New Service Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.other.service.option')->with($notification);
+    }//End Method
+
+    public function EditService($id){
+        $service = Service::findOrFail($id);
+        return view('admin.other.edit_service',compact('service'));
+
+    } // End Mehtod
+
+    public function UpdateService(Request $request){
+        $id = $request->id;
+       
+
+        Service::findOrFail($id)->update([
+            'service_name' => $request->service_name,
+            'service_status' => $request->service_status,
+            'service_cost' => $request->service_cost,
+        ]);
+
+       $notification = array(
+            'message' => 'Service Information Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.other.service.option')->with($notification);
+        
+    } // End Mehtod 
+
+    public function DeleteService($id){
+
+        Service::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Service Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
 
 }
