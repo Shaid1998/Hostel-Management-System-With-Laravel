@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notices', function (Blueprint $table) {
+        Schema::create('photo_gallaries', function (Blueprint $table) {
             $table->id();
-            $table->string('notice_topic')->nullable();
-            $table->text('notice_details')->nullable();
-            $table->enum('notice_for',['all','admin','worker','visitor','user'])->default('all');
-            $table->enum('notice_Alart',['High','Low','Normal'])->default('Normal');
+            $table->string('photo')->nullable();
+            $table->text('photo_title')->nullable();
+            $table->string('photo_credit')->nullable();
+            $table->enum('photo_for',['all','admin','user','worker','guest'])->default('all');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notices');
+        Schema::dropIfExists('photo_gallaries');
     }
 };

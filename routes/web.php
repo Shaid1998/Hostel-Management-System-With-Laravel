@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/hostel/information', [GuestController::class, 'HostelInformation'])->name('hostel.information');
 Route::get('/hostel/home', [GuestController::class, 'HostelHome'])->name('hostel.home');
+Route::get('/photo/gallary', [GuestController::class, 'PhotoGallary'])->name('photo.gallary');
 Route::get('/hostel/contact', [GuestController::class, 'HostelContact'])->name('hostel.contact');
 Route::get('/visitor/message/contact', [GuestController::class, 'VisitorMessageContact'])->name('visitor.message.contact');
 Route::post('/visitor/message/contact/store', [GuestController::class, 'VisitorMessageContactStore'])->name('visitor.message.contact.store');

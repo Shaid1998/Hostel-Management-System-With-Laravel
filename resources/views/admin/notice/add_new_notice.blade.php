@@ -53,6 +53,7 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <select name='notice_for' required>
                                             <option value="">Select One</option>
+                                            <option value="all">All</option>
                                             <option value="admin">Admin</option>
                                             <option value="user">User</option>
                                             <option value="worker">User</option>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\ContactForGuest;
 use App\Models\Message;
+use App\Models\PhotoGallary;
 
 class GuestController extends Controller
 {
@@ -43,6 +44,12 @@ class GuestController extends Controller
         );
 
         return redirect()->back()->with($notification);
+    }//End Method
+
+    public function PhotoGallary(){
+        $photosall = PhotoGallary::all();
+
+        return view('visitor.guest_photo_gallary',compact('photosall'));
     }//End Method
 
 }
