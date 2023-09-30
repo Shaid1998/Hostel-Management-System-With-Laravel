@@ -386,4 +386,8 @@ class AdminController extends Controller
             return redirect()->route('admin.notice.board')->with($notification);
     }//End Method
 
+    public function AdminOtherOption(){
+        return view('admin.other.home');
+    }//End Method
+
 }

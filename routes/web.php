@@ -68,6 +68,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/notice/delete/{id}', [AdminController::class, 'DeleteNotice'])->name('delete.notice');
     Route::get('/admin/notice/home', [AdminController::class, 'AdminNoticeHome'])->name('admin.notice.board');
     Route::get('/admin/add/notice', [AdminController::class, 'AdminAddNotice'])->name('add.new.notice');
+    Route::get('/admin/other/option', [AdminController::class, 'AdminOtherOption'])->name('admin.other.option');
     Route::post('/admin/add/new/notice/store', [AdminController::class, 'NewNoticeStore'])->name('admin.notice.store');
 
 });
