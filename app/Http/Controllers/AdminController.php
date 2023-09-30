@@ -372,10 +372,39 @@ class AdminController extends Controller
 
             return redirect()->route('admin.notice.board')->with($notification);
     }//End Method
-
     public function AdminOtherOption(){
+        return view('admin.other.other_index');
+    }//End Method
+
+    public function AdminOtherPhotoOption(){
         $data = PhotoGallary::all();
         return view('admin.other.image',compact('data'));
+    }//End Method
+
+    public function AdminAddPhoto(){
+        return view('admin.other.add_image');
+    }//End Method
+
+    public function NewPhotoStore(Request $request){
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/admin_images/site/'.$name_gen);
+        $save_url = 'upload/admin_images/site/'.$name_gen;
+
+
+        PhotoGallary::insert([
+            'photo_title' => $request->photo_title,
+            'photo_credit' => $request->photo_credit,
+            'photo_for' => $request->photo_for,
+            'photo' => $save_url
+        ]);
+
+       $notification = array(
+            'message' => 'New Photo Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.other.photo.option')->with($notification);
     }//End Method
 
 }
