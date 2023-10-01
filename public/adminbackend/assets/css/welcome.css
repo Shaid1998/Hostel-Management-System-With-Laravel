@@ -1,3 +1,178 @@
-.HomePage1{
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+  }
+  
+  .glowing {
+    position: relative;
+    min-width: 700px;
+    height: 550px;
+    margin: -150px;
+    transform-origin: right;
+    animation: colorChange 5s linear infinite;
+  }
+  
+  .glowing:nth-child(even) {
+    transform-origin: left;
+  }
+  
+  @keyframes colorChange {
+    0% {
+      filter: hue-rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  .glowing span {
+    position: absolute;
+    top: calc(80px * var(--i));
+    left: calc(80px * var(--i));
+    bottom: calc(80px * var(--i));
+    right: calc(80px * var(--i));
+  }
+  
+  .glowing span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 15px;
+    height: 15px;
+    background: #f00;
+    border-radius: 50%;
+  }
+  
+  .glowing span:nth-child(3n + 1)::before {
+    background: rgba(134,255,0,1);
+    box-shadow: 0 0 20px rgba(134,255,0,1),
+      0 0 40px rgba(134,255,0,1),
+      0 0 60px rgba(134,255,0,1),
+      0 0 80px rgba(134,255,0,1),
+      0 0 0 8px rgba(134,255,0,.1);
+  }
+  
+  .glowing span:nth-child(3n + 2)::before {
+    background: rgba(255,214,0,1);
+    box-shadow: 0 0 20px rgba(255,214,0,1),
+      0 0 40px rgba(255,214,0,1),
+      0 0 60px rgba(255,214,0,1),
+      0 0 80px rgba(255,214,0,1),
+      0 0 0 8px rgba(255,214,0,.1);
+  }
+  
+  .glowing span:nth-child(3n + 3)::before {
+    background: rgba(0,226,255,1);
+    box-shadow: 0 0 20px rgba(0,226,255,1),
+      0 0 40px rgba(0,226,255,1),
+      0 0 60px rgba(0,226,255,1),
+      0 0 80px rgba(0,226,255,1),
+      0 0 0 8px rgba(0,226,255,.1);
+  }
+  
+  .glowing span:nth-child(3n + 1) {
+    animation: animate 15s alternate infinite;
+  }
+  
+  .glowing span:nth-child(3n + 2) {
+    animation: animate-reverse 5s alternate infinite;
+  }
+  
+  .glowing span:nth-child(3n + 3) {
+    animation: animate 12s alternate infinite; 
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-reverse {
+    0% {
+      transform: rotate(360deg);
+    }
     
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+.HomePage1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:130px;
+    font-style:italic;
+    color:#e5e7eb
+}
+.HomePage2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:230px;
+    font-style:italic;
+    color:#e5e7eb
+}
+.HomeButton2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:50px;
+    font-weight: 700;
+    font-style:italic;
+    color: #afb4c0;
+    padding-top: 3rem;
+    padding-left: 15rem;
+}
+
+.HomeButton2:hover{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:52px;
+    font-weight: 800;
+    font-style:italic;
+    color: #f70b4d;
+}
+.HomeButton1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:50px;
+    font-weight: 700;
+    font-style:italic;
+    color: #b5bdcb;
+    padding-top: 3rem;
+    padding-left: 4rem;
+}
+.HomeButton1:hover{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:52px;
+    font-weight: 800;
+    font-style:italic;
+    color: #f70b4d;
+}
+a{
+    text-decoration: none;
+    display: flex;
+    text-align: end;
+}
+.ButtonCl{
+    height: 100px;
+    width: 100%;
+    align-items: right;
+    text-align: right;
 }
