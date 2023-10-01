@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Middleware\Role;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\ContactForGuest;
+use App\Models\HomeTopic;
 use App\Models\User;
 use App\Models\Message;
 use App\Models\Notice;
@@ -354,8 +355,8 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminOtherHomeOption(){
-        $home = Notice::all();
-        return view('admin.notice.notice_view',compact('notice'));
+        $home = HomeTopic::all();
+        return view('admin.other.home_topic',compact('home'));
     }//End Method
 
     public function AdminAddNotice(){
