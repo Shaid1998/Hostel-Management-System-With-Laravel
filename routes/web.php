@@ -84,6 +84,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/other/photo/option', [AdminController::class, 'AdminOtherPhotoOption'])->name('admin.other.photo.option');
     Route::get('/admin/other/contact/option', [AdminController::class, 'AdminOtherContactOption'])->name('admin.other.contact.option');
     Route::get('/admin/add/contact', [AdminController::class, 'AdminAddContact'])->name('add.new.contact');
+    Route::post('/admin/add/new/contact/store', [AdminController::class, 'NewContactStore'])->name('admin.add.new.contact.store');
+
 });
 
 

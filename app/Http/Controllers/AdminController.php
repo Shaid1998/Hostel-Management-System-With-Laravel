@@ -541,4 +541,27 @@ class AdminController extends Controller
 
     }// End Method
 
+    public function NewContactStore(Request $request){
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
+        $save_url = 'upload/user_images/'.$name_gen;
+
+
+        ContactForGuest::insert([
+            'name' => $request->name,
+            'image' => $save_url,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'position' => $request->position,
+        ]);
+
+       $notification = array(
+            'message' => 'New Contact Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.other.contact.option')->with($notification);
+    }//End Method
+
 }
