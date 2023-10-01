@@ -1,10 +1,16 @@
 
 <div style="background-image: linear-gradient(to bottom right, red, yellow);" class="sidebar-wrapper" data-simplebar="true">
-
-	
-		<!--navigation-->
+	<!--navigation-->
 	<div>
-		<ul class="metismenu" id="menu">
+		<ul class="metismenuG" id="menu">
+			<li style="padding-top: 5rem">
+				<a href="{{ route('login') }}">
+					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class="fas fa-image"></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Log In</div>
+				</a>
+			</li>
+		</ul>
+		<ul class="metismenuG" id="menu">
 			<li style="padding-top: 10rem">
 				<a href="{{ route('hostel.home') }}">
 					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class='bx bx-home-circle'></i></div>
