@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\ContactForGuest;
+use App\Models\HomeTopic;
 use App\Models\Message;
 use App\Models\PhotoGallary;
 
@@ -16,7 +17,8 @@ class GuestController extends Controller
     }//End Method
 
     public function HostelHome(){
-        return view('welcome');
+        $data = HomeTopic::all();
+        return view('welcome',compact('data'));
     }//End Method
 
     public function HostelContact(){

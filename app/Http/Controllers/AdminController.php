@@ -458,6 +458,12 @@ class AdminController extends Controller
 
     } // End Mehtod
 
+    public function AdminOtherHomeOptionEdit($id){
+        $service = HomeTopic::findOrFail($id);
+        return view('admin.other.edit_home_topic',compact('service'));
+
+    } // End Mehtod
+
     public function UpdateService(Request $request){
         $id = $request->id;
        
@@ -483,6 +489,19 @@ class AdminController extends Controller
 
         $notification = array(
             'message' => 'Service Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function AdminOtherHomeOptionDelete($id){
+
+        HomeTopic::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Home Text Deleted Successfully',
             'alert-type' => 'success'
         );
 
@@ -576,17 +595,38 @@ class AdminController extends Controller
 
     public function AdminOtherHomeOptionNewStore(Request $request){
         HomeTopic::insert([
-            'service_name' => $request->service_name,
-            'service_status' => $request->service_status,
-            'service_cost' => $request->service_cost,
+            'home_title' => $request->home_title,
+            'home_sub_Title' => $request->home_sub_Title,
+            'Home_button_1' => $request->Home_button_1,
+            'home_button_2' => $request->home_button_2,
         ]);
 
        $notification = array(
-            'message' => 'New Service Added Successfully',
+            'message' => 'New Home Text Added Successfully',
             'alert-type' => 'success'
         );
 
-            return redirect()->route('admin.other.service.option')->with($notification);
+            return redirect()->route('admin.other.home.option')->with($notification);
     }//End Method
+
+    public function AdminOtherHomeOptionUpdate(Request $request){
+        $id = $request->id;
+       
+
+        HomeTopic::findOrFail($id)->update([
+            'home_title' => $request->home_title,
+            'home_sub_Title' => $request->home_sub_Title,
+            'Home_button_1' => $request->Home_button_1,
+            'home_button_2' => $request->home_button_2,
+        ]);
+
+       $notification = array(
+            'message' => 'Home Text Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.other.home.option')->with($notification);
+        
+    } // End Mehtod 
 
 }

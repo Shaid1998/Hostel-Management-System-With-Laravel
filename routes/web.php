@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GuestController;
+use App\Models\HomeTopic;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = HomeTopic::all();
+    return view('welcome',compact('data'));
 });
 
 Route::get('/dashboard', function () {
@@ -87,7 +89,10 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/add/new/contact/store', [AdminController::class, 'NewContactStore'])->name('admin.add.new.contact.store');
     Route::get('/admin/other/home/option', [AdminController::class, 'AdminOtherHomeOption'])->name('admin.other.home.option');
     Route::get('/admin/other/home/option/new', [AdminController::class, 'AdminOtherHomeOptionNew'])->name('add.new.homeTopic');
-    Route::post('/admin/other/home/option/new/store', [AdminController::class, 'AdminOtherHomeOptionNewStore'])->name('admin.add.new.service.store');
+    Route::post('/admin/other/home/option/new/store', [AdminController::class, 'AdminOtherHomeOptionNewStore'])->name('admin.add.new.home.store');
+    Route::post('/admin/other/home/option/update', [AdminController::class, 'AdminOtherHomeOptionUpdate'])->name('admin.update.home.text');
+    Route::get('/admin/other/home/option/edit/{id}', [AdminController::class, 'AdminOtherHomeOptionEdit'])->name('admin.home.text.edit');
+    Route::get('/admin/other/home/option/delete/{id}', [AdminController::class, 'AdminOtherHomeOptionDelete'])->name('admin.home.text.delete');
 
 });
 
