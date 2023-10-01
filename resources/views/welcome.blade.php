@@ -21,9 +21,6 @@
         @foreach ($data as $data)
 
         <div>
-            <div style="width: 100%;height:100px;display:flex" class="row">
-                <div style="width: 100%;height:100%;" class="column"><a href="" class="HomeButton1">{{$data->Home_button_1}}</a><br /></div>
-            </div>
             <p id='head1' class='header'>{{$data->home_title}}</p>
             <p id='head2' class='header'>THE DREAM HOME</p>
             <p id='head3' class='header'>JUST FOR YOU</p>

@@ -370,9 +370,11 @@ button:focus{
     font-size:35px;
     font-weight: 700;
     font-style:italic;
-    color: #afb4c0;
+    color: #f0f2f6;
     padding-top: 5px;
     padding-bottom: 5px;
+    border: 0;
+    border-radius: 25px;
 }
 
 .HomeButton2:hover{
@@ -380,7 +382,10 @@ button:focus{
     font-size:52px;
     font-weight: 800;
     font-style:italic;
-    color: #f70b4d;
+    color: #09df69;
+    background-color: #1709df;
+    border: 0;
+    border-radius: 25px;
 }
 .HomeButton1{
     font-family: 'Times New Roman', Times, serif;

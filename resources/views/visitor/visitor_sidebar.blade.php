@@ -5,13 +5,13 @@
 		<ul class="metismenuG" id="menu">
 			<li style="padding-top: 5rem">
 				<a href="{{ route('login') }}">
-					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class="fas fa-image"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Log In</div>
+					<div style="color:rgb(0, 30, 255);font-size:45px;" class="parent-icon"><i class="fas fa-sign-in"></i></div>
+					<div style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:45px;color:rgb(0, 30, 255);" class="menu-title">Log In</div>
 				</a>
 			</li>
 		</ul>
 		<ul class="metismenuG" id="menu">
-			<li style="padding-top: 10rem">
+			<li style="padding-top: 5rem">
 				<a href="{{ route('hostel.home') }}">
 					<div style="color:rgb(0, 30, 255);font-size:30px;" class="parent-icon"><i class='bx bx-home-circle'></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:22px;" class="menu-title">Home</div>
