@@ -353,6 +353,11 @@ class AdminController extends Controller
         return view('admin.notice.notice_view',compact('notice'));
     }//End Method
 
+    public function AdminOtherHomeOption(){
+        $home = Notice::all();
+        return view('admin.notice.notice_view',compact('notice'));
+    }//End Method
+
     public function AdminAddNotice(){
         return view('admin.notice.add_new_notice');
     }//End Method
