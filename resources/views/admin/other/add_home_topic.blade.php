@@ -6,7 +6,7 @@
 <div class="page-content"> 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">ADD NEW SERVICE</div>
+        <div class="breadcrumb-title pe-3">ADD NEW HOME TEXT</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
@@ -24,41 +24,50 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new.service.store') }}" enctype="multipart/form-data" >
+                            <form id="myForm" method="post" action="{{ route('admin.add.new.home.store') }}">
                                 @csrf
                                 <input type="hidden" name="id" >
                                         
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Service Name</h6>
+                                        <h6 class="mb-0">Home Title</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="service_name" class="form-control" placeholder="Service Name" required  />
+                                        <input type="text" name="home_title" class="form-control" placeholder="Home title" required  />
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Service Status</h6>
+                                        <h6 class="mb-0">Home Sub Titile</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="service_status" class="form-control" placeholder="Service Status" required   />
+                                        <input type="text" name="home_sub_Title" class="form-control" placeholder="Home subtitle" required   />
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Service Cost</h6>
+                                        <h6 class="mb-0">Home Button 1 Text</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="service_cost" class="form-control" placeholder="Service Cost" required   />
+                                        <input type="text" name="Home_button_1" class="form-control" placeholder="Button one text" required   />
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Home Button 2 Text</h6>
+                                    </div>
+                                    <div class="form-group col-sm-9 text-secondary">
+                                        <input type="text" name="home_button_2" class="form-control" placeholder="Button one text" required   />
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="submit" class="btn btn-primary px-4" value="Upload  Service" />
+                                        <input type="submit" class="btn btn-primary px-4" value="Upload  Text" />
                                     </div>
                                 </div>
                             </div>

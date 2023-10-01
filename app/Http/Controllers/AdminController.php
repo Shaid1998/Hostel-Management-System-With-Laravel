@@ -570,4 +570,23 @@ class AdminController extends Controller
             return redirect()->route('admin.other.contact.option')->with($notification);
     }//End Method
 
+    public function AdminOtherHomeOptionNew(){
+        return  view('admin.other.add_home_topic');
+    }//End Method
+
+    public function AdminOtherHomeOptionNewStore(Request $request){
+        HomeTopic::insert([
+            'service_name' => $request->service_name,
+            'service_status' => $request->service_status,
+            'service_cost' => $request->service_cost,
+        ]);
+
+       $notification = array(
+            'message' => 'New Service Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.other.service.option')->with($notification);
+    }//End Method
+
 }

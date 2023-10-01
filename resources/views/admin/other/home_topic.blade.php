@@ -10,7 +10,7 @@
                         <div>
                             <h5 style="font-family: 'Times New Roman', Times, serif;font-weight:800;font-style:italic;font-size:55px;color:black;text-align:center" class="mb-0">ALL TOPIC</h5>
                         </div>
-                        <div class="font-22 ms-auto"><a href='{{route('add.new.service')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:15px;cursor:pointer;" class="btn btn-success" >ADD NEW TOPIC</a></div>
+                        <div class="font-22 ms-auto"><a href='{{route('add.new.homeTopic')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:15px;cursor:pointer;" class="btn btn-success" >ADD NEW TOPIC</a></div>
                     </div>
                     <hr>
                     <div style="width:100%;background-color:black" class="table-responsive">

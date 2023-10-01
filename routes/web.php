@@ -86,6 +86,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/add/contact', [AdminController::class, 'AdminAddContact'])->name('add.new.contact');
     Route::post('/admin/add/new/contact/store', [AdminController::class, 'NewContactStore'])->name('admin.add.new.contact.store');
     Route::get('/admin/other/home/option', [AdminController::class, 'AdminOtherHomeOption'])->name('admin.other.home.option');
+    Route::get('/admin/other/home/option/new', [AdminController::class, 'AdminOtherHomeOptionNew'])->name('add.new.homeTopic');
+    Route::post('/admin/other/home/option/new/store', [AdminController::class, 'AdminOtherHomeOptionNewStore'])->name('admin.add.new.service.store');
 
 });
 
