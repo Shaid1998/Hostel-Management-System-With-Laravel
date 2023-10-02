@@ -1,0 +1,15 @@
+.MainCont{
+    background-image: linear-gradient(to bottom right, rgb(234, 255, 0), rgb(22, 241, 241));
+    text-align:center;
+}
+
+.topName{
+    font-family: 'Times New Roman', Times, serif;
+    background-color:rgb(39, 12, 210);
+    font-size:55px;
+    height:80px;
+    width:100%;
+    text-align:center;
+    padding-top:5px;
+    color:aliceblue;
+}

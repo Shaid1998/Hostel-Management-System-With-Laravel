@@ -16,8 +16,9 @@ class UserController extends Controller
     } // End Mehtod 
 
     public function UserInformation(){
-
-        return view('userPart.user.user_information');
+        $id = Auth::user()->id;
+        $userData = User::find($id);
+        return view('userPart.user.user_information',compact('userData'));
 
     } // End Mehtod 
 
