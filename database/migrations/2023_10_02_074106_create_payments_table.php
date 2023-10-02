@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('unique_payment_id')->nullable();
             $table->string('person_name')->nullable();
             $table->string('payment_amount')->nullable();
-            $table->string('person_designation')->nullable();
+            $table->enum('person_designation',['worker','user'])->default('user');
             $table->text('payment_details')->nullable();
-            $table->string('payment_medium')->nullable();
+            $table->enum('payment_medium',['bKash','uKash','nagad','direct','other'])->default('direct');
             $table->string('account_number')->nullable();
             $table->string('reference_code')->nullable();
             $table->timestamps();

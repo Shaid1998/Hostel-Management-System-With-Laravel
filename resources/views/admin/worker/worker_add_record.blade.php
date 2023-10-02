@@ -51,7 +51,11 @@
                                         <h6 class="mb-0">Person Designation</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="person_designation" class="form-control" placeholder="Person designation" required   />
+                                        <select name='person_designation' required>
+                                            <option value="">Select One</option>
+                                            <option value="worker">Worker</option>
+                                            <option value="user">User</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -69,7 +73,14 @@
                                         <h6 class="mb-0">Payment Medium</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="payment_medium" class="form-control" placeholder="Payment medium like bKash, DBBL, Paypal, Cash on hand ..... etc." required   />
+                                        <select name='payment_medium' required>
+                                            <option value="">Select One</option>
+                                            <option value="bKash">bKash</option>
+                                            <option value="nagad">Nagad</option>
+                                            <option value="uKash">uKash</option>
+                                            <option value="direct">Direct</option>
+                                            <option value="other">Other</option>
+                                        </select>
                                     </div>
                                 </div>
 

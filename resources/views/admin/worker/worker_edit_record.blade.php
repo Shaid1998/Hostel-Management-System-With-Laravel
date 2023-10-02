@@ -6,13 +6,13 @@
 <div class="page-content"> 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">ADD NEW PAYMENT DETAILS</div>
+        <div class="breadcrumb-title pe-3">EDIT PAY DETAILS</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">ADD NEW RECORD</li>
+                    <li class="breadcrumb-item active" aria-current="page">CHANGE RECORD</li>
                 </ol>
             </nav>
         </div>
@@ -24,7 +24,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new.user.Payment.store') }}">
+                            <form id="myForm" method="post" action="{{ route('admin.add.new.worker.pay.store') }}" >
                                 @csrf
                                 <input type="hidden" name="id" >
                                         

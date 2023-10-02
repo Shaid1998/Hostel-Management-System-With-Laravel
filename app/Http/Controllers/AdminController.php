@@ -633,7 +633,7 @@ class AdminController extends Controller
     } // End Mehtod 
 
     public function AdminUserPaymentList(){
-        $user = Payment::all();
+        $user = Payment::where('person_designation','user')->latest()->get();
         return view('admin.user.user_payment_details',compact('user'));
     }//End Method
 
@@ -642,9 +642,10 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminNewUserPaymentRecordStore(Request $request){
-        $unid = Str::random(9);
+        $unid = IdGenerator::generate(['table' => 'payments','field'=>'unique_payment_id', 'length' => 8, 'prefix' => 'U']);
+        //$unid = Str::random(9);
         Payment::insert([
-            'unique_payment_id' => $request->$unid,
+            'unique_payment_id' => $unid,
             'person_name' => $request->person_name,
             'payment_amount' => $request->payment_amount,
             'person_designation' => $request->person_designation,
@@ -663,7 +664,7 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminWorkerPaymentList(){
-        $worker = Payment::all();
+        $worker = Payment::where('person_designation','worker')->latest()->get();
         return view('admin.worker.worker_payment_details',compact('worker'));
     }//End Method
 
@@ -672,7 +673,7 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminNewWorkerPayRecordStore(Request $request){
-        $unid = IdGenerator::generate(['table' => 'payments','field'=>'unique_payment_id', 'length' => 4, 'prefix' => 'U']);
+        $unid = IdGenerator::generate(['table' => 'payments','field'=>'unique_payment_id', 'length' => 8, 'prefix' => 'W']);
         //$unid = Str::random(9);
         Payment::insert([
             'unique_payment_id' => $unid,
@@ -690,7 +691,45 @@ class AdminController extends Controller
             'alert-type' => 'success'
         );
 
-            return redirect()->route('admin.worker.pay')->with($notification);
+        return redirect()->route('admin.worker.pay')->with($notification);
     }//End Method
+
+    public function AdminUserPaymentRecordEdit($id){
+        $user = Payment::findOrFail($id);
+        return view('admin.user.user_edit_record',compact('user'));
+
+    } // End Mehtod
+
+    public function AdminUserPaymentRecordDelete($id){
+
+        Payment::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'User Payment Record Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function AdminWorkerPaymentRecordEdit($id){
+        $worker = Payment::findOrFail($id);
+        return view('admin.worker.worker_edit_record',compact('worker'));
+
+    } // End Mehtod
+
+    public function AdminWorkerPayRecordDelete($id){
+
+        Payment::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Worker Payment Record Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
 
 }
