@@ -28,11 +28,12 @@ class AdminController extends Controller
 
     } // End Mehtod 
 
-    public function UserInformation(){
+    public function AllUserInformation(){
         $alluser = User::where('role','user')->latest()->get();
         return view('admin.user.user_information',compact('alluser'));
 
     } // End Mehtod 
+
 
     public function WorkerInformation(Request $request){
         $search =$request['search'] ?? "";

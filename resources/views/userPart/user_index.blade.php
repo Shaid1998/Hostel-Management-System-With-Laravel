@@ -1,4 +1,4 @@
-@extends('userPart.user_dashboard')
+@extends('userPart.user_Dashboard')
 @section('user')
  
 

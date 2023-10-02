@@ -24,10 +24,10 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{route ('user.information')}}">
+				<a href="{{route('user.information')}}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i>
 					</div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">User Information</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My Profile</div>
 				</a>
 			</li>
 			<li>
@@ -35,6 +35,41 @@
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Messages</div>
+				</a>
+			</li>
+			<li>
+				<a href=" ">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Notice</div>
+				</a>
+			</li>
+			<li>
+				<a href=" ">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My ToDo List</div>
+				</a>
+			</li>
+			<li>
+				<a href=" ">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My Routine</div>
+				</a>
+			</li>
+			<li>
+				<a href=" ">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Notes</div>
+				</a>
+			</li>
+			<li>
+				<a href=" ">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Hostel Contact</div>
 				</a>
 			</li>
 		</ul>

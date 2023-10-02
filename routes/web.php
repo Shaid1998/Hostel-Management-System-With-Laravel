@@ -56,7 +56,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('update.password');
-    Route::get('/all/user/information', [AdminController::class, 'UserInformation'])->name('all.user.information');
+    Route::get('/all/user/information', [AdminController::class, 'AllUserInformation'])->name('all.user.information');
     Route::get('/admin/user/information/edit/{id}', [AdminController::class, 'EditUser'])->name('user.information.edit');
     Route::get('/admin/user/delete/{id}', [AdminController::class, 'DeleteUser'])->name('user.delete');
     Route::post('/admin/user/information/update', [AdminController::class, 'UpdateUser'])->name('admin.update.user');
@@ -96,15 +96,12 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/user/payment/list', [AdminController::class, 'AdminUserPaymentList'])->name('admin.user.payment');
     Route::get('/admin/user/payment/details', [AdminController::class, 'AdminUserPaymentDetails'])->name('add.user.payment.details');
     Route::post('/admin/new/user/payment/record/store', [AdminController::class, 'AdminNewUserPaymentRecordStore'])->name('admin.add.new.user.Payment.store');
-
     Route::get('/admin/user/payment/record/edit/{id}', [AdminController::class, 'AdminUserPaymentRecordEdit'])->name('user.payment.record.edit');
     Route::get('/admin/user/payment/record/delete/{id}', [AdminController::class, 'AdminUserPaymentRecordDelete'])->name('user.payment.record.delete');
     Route::post('/admin/user/payment/record/update', [AdminController::class, 'AdminUserPaymentRecordUpdate'])->name('user.payment.record.update');
-
     Route::get('/admin/worker/payment/list', [AdminController::class, 'AdminWorkerPaymentList'])->name('admin.worker.pay');
     Route::get('/admin/worker/pay/details', [AdminController::class, 'AdminWorkerPayDetails'])->name('add.worker.pay.details');
     Route::post('/admin/new/worker/pay/record/store', [AdminController::class, 'AdminNewWorkerPayRecordStore'])->name('admin.add.new.worker.pay.store');
-
     Route::get('/admin/worker/pay/record/edit/{id}', [AdminController::class, 'AdminWorkerPaymentRecordEdit'])->name('worker.pay.record.edit');
     Route::get('/admin/worker/pay/record/delete/{id}', [AdminController::class, 'AdminWorkerPayRecordDelete'])->name('worker.pay.record.delete');
     Route::post('/admin/worker/pay/record/update', [AdminController::class, 'AdminWorkerPayRecordUpdate'])->name('worker.pay.record.update');
@@ -125,7 +122,6 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');
     Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
     Route::get('/user/information', [UserController::class, 'UserInformation'])->name('user.information');
-
 });
 
 
