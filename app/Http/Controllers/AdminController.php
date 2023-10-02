@@ -16,6 +16,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Image;
 
 class AdminController extends Controller
@@ -444,7 +445,7 @@ class AdminController extends Controller
             'alert-type' => 'success'
         );
 
-            return redirect()->route('admin.other.service.option')->with($notification);
+        return redirect()->route('admin.other.service.option')->with($notification);
     }//End Method
 
     public function EditService($id){
@@ -639,6 +640,27 @@ class AdminController extends Controller
         return view('admin.user.user_add_record');
     }//End Method
 
+    public function AdminNewUserPaymentRecordStore(Request $request){
+        $unid = Str::random(9);
+        Payment::insert([
+            'unique_payment_id' => $request->$unid,
+            'person_name' => $request->person_name,
+            'payment_amount' => $request->payment_amount,
+            'person_designation' => $request->person_designation,
+            'payment_details' => $request->payment_details,
+            'payment_medium' => $request->payment_medium,
+            'account_number' => $request->account_number,
+            'reference_code' => $request->reference_code,
+        ]);
+
+       $notification = array(
+            'message' => 'New User Payment Record Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.user.payment')->with($notification);
+    }//End Method
+
     public function AdminWorkerPaymentList(){
         $worker = Payment::all();
         return view('admin.worker.worker_payment_details',compact('worker'));
@@ -646,6 +668,27 @@ class AdminController extends Controller
 
     public function AdminWorkerPayDetails(){
         return view('admin.worker.worker_add_record');
+    }//End Method
+
+    public function AdminNewWorkerPayRecordStore(Request $request){
+        $unid = Str::random(9);
+        Payment::insert([
+            'unique_payment_id' => $request->$unid,
+            'person_name' => $request->person_name,
+            'payment_amount' => $request->payment_amount,
+            'person_designation' => $request->person_designation,
+            'payment_details' => $request->payment_details,
+            'payment_medium' => $request->payment_medium,
+            'account_number' => $request->account_number,
+            'reference_code' => $request->reference_code,
+        ]);
+
+       $notification = array(
+            'message' => 'New Worker Payment Record Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.worker.payment')->with($notification);
     }//End Method
 
 }

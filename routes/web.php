@@ -95,8 +95,11 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/other/home/option/delete/{id}', [AdminController::class, 'AdminOtherHomeOptionDelete'])->name('admin.home.text.delete');
     Route::get('/admin/user/payment/list', [AdminController::class, 'AdminUserPaymentList'])->name('admin.user.payment');
     Route::get('/admin/user/payment/details', [AdminController::class, 'AdminUserPaymentDetails'])->name('add.user.pay.details');
+    Route::post('/admin/new/user/payment/record/store', [AdminController::class, 'AdminNewUserPaymentRecordStore'])->name('admin.add.new.user.Payment.store');
     Route::get('/admin/worker/payment/list', [AdminController::class, 'AdminWorkerPaymentList'])->name('admin.worker.pay');
     Route::get('/admin/worker/pay/details', [AdminController::class, 'AdminWorkerPayDetails'])->name('add.worker.pay.details');
+    Route::post('/admin/new/worker/pay/record/store', [AdminController::class, 'AdminNewWorkerPayRecordStore'])->name('admin.add.new.worker.Payment.store');
+
 });
 
 
