@@ -24,7 +24,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new.Worker.Payment.store') }}" >
+                            <form id="myForm" method="post" action="{{ route('admin.add.new.worker.pay.store') }}" >
                                 @csrf
                                 <input type="hidden" name="id" >
                                         

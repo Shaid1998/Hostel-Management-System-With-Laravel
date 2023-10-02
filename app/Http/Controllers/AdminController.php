@@ -12,6 +12,7 @@ use App\Models\Notice;
 use App\Models\Payment;
 use App\Models\PhotoGallary;
 use App\Models\Service;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -671,9 +672,10 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminNewWorkerPayRecordStore(Request $request){
-        $unid = Str::random(9);
+        $unid = IdGenerator::generate(['table' => 'payments','field'=>'unique_payment_id', 'length' => 4, 'prefix' => 'U']);
+        //$unid = Str::random(9);
         Payment::insert([
-            'unique_payment_id' => $request->$unid,
+            'unique_payment_id' => $unid,
             'person_name' => $request->person_name,
             'payment_amount' => $request->payment_amount,
             'person_designation' => $request->person_designation,
@@ -688,7 +690,7 @@ class AdminController extends Controller
             'alert-type' => 'success'
         );
 
-            return redirect()->route('admin.worker.payment')->with($notification);
+            return redirect()->route('admin.worker.pay')->with($notification);
     }//End Method
 
 }
