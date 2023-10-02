@@ -93,7 +93,10 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/other/home/option/update', [AdminController::class, 'AdminOtherHomeOptionUpdate'])->name('admin.update.home.text');
     Route::get('/admin/other/home/option/edit/{id}', [AdminController::class, 'AdminOtherHomeOptionEdit'])->name('admin.home.text.edit');
     Route::get('/admin/other/home/option/delete/{id}', [AdminController::class, 'AdminOtherHomeOptionDelete'])->name('admin.home.text.delete');
-
+    Route::get('/admin/user/payment/list', [AdminController::class, 'AdminUserPaymentList'])->name('admin.user.payment');
+    Route::get('/admin/user/payment/details', [AdminController::class, 'AdminUserPaymentDetails'])->name('add.user.pay.details');
+    Route::get('/admin/worker/payment/list', [AdminController::class, 'AdminWorkerPaymentList'])->name('admin.worker.pay');
+    Route::get('/admin/worker/pay/details', [AdminController::class, 'AdminWorkerPayDetails'])->name('add.worker.pay.details');
 });
 
 

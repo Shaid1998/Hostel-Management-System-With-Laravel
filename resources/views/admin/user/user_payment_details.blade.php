@@ -12,8 +12,7 @@
 				<div>
 					<h5 style="font-family: 'Times New Roman', Times, serif;font-weight:800;font-size:35px;font-style:italic;color:aliceblue" class="mb-0">Payment Summary Of User</h5>
 				</div>
-				<div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
-				</div>
+				<div class="font-22 ms-auto"><a href='{{route('add.user.pay.details')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:15px;cursor:pointer;" class="btn btn-success" >ADD NEW PAYMENT DETAILS</a></div>
 			</div>
 			<hr>
 			<div style="background-color:black;" class="table-responsive">
@@ -30,8 +29,23 @@
 							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:16%">Action</th> 
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
+					@foreach ($user as $user)
+                    <tbody>
+                        <tr>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->id}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->created_at}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->unique_payment_id}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->person_name}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->payment_amount}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->person_designation}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue">{{$serviceall->payment_details}}</td>
+                            <td>
+                                <a href='{{ route ('contact.edit',$user->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >UPDATE</a>
+                                <a href='{{ route ('contact.delete',$user->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    @endforeach
 				</table>
 			</div>
 		</div>

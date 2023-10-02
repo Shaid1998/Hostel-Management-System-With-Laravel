@@ -9,6 +9,7 @@ use App\Models\HomeTopic;
 use App\Models\User;
 use App\Models\Message;
 use App\Models\Notice;
+use App\Models\Payment;
 use App\Models\PhotoGallary;
 use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
@@ -628,5 +629,23 @@ class AdminController extends Controller
             return redirect()->route('admin.other.home.option')->with($notification);
         
     } // End Mehtod 
+
+    public function AdminUserPaymentList(){
+        $user = Payment::all();
+        return view('admin.user.user_payment_details',compact('user'));
+    }//End Method
+
+    public function AdminUserPaymentDetails(){
+        return view('admin.user.user_add_record');
+    }//End Method
+
+    public function AdminWorkerPaymentList(){
+        $worker = Payment::all();
+        return view('admin.worker.worker_payment_details',compact('worker'));
+    }//End Method
+
+    public function AdminWorkerPayDetails(){
+        return view('admin.worker.worker_add_record');
+    }//End Method
 
 }
