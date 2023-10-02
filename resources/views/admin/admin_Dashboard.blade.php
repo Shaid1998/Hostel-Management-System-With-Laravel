@@ -22,6 +22,7 @@
 	<!-- Bootstrap CSS -->
 	<link href="{{ asset('adminbackend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('adminbackend/assets/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('adminbackend/assets/css/admin.css') }}" rel="stylesheet">
 	<link href="{{ asset('adminbackend/assets/css/icons.css') }}" rel="stylesheet">
 	<!-- Theme Style CSS -->
 	<link rel="stylesheet" href="{{ asset('adminbackend/assets/css/dark-theme.css') }}" />

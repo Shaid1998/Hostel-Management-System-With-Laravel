@@ -90,27 +90,12 @@
 				<div>
 					<h5 style="font-family: 'Times New Roman', Times, serif;font-weight:800;font-size:35px;font-style:italic;color:aliceblue" class="mb-0">Payment Summary Of User</h5>
 				</div>
-				<div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
-				</div>
+				<div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i></div>
 			</div>
 			<hr>
-			<div style="background-color:black;" class="table-responsive">
-				<table class="table align-middle mb-0">
-					<thead class="table-dark">
-						<tr>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:4%">Sl</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:10%">Date</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:8%">Payment Id</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:12%">Name</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:10%">Amount</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:5%">Person Designation</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:35%">Details</th> 
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:16%">Action</th> 
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+			<div class="row">
+				<p class="payment_text">Here is User means all member payment information, who is in the hostel, and pay rent, food bill, internet ........ etc. </p>
+				<a class="btn payment_btn" href="">See Full List</a>
 			</div>
 		</div>
 	</div>
@@ -127,23 +112,9 @@
 				</div>
 			</div>
 			<hr>
-			<div class="table-responsive">
-				<table class="table align-middle mb-0">
-					<thead class="table-dark">
-						<tr>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:4%">Sl</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:10%">Date</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:8%">Payment Id</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:12%">Name</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:10%">Amount</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:5%">Person Designation</th>
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:35%">Details</th> 
-							<th style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:20px;font-style:italic;width:5%;text-align:center;width:16%">Action</th> 
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+			<div class="row">
+				<p class="pay_text">Here is Worker means all member payment information, hostel have to pay, work for money, cleaner, manager ........ etc. </p>
+				<a class="btn pay_btn" href="">See Full List</a>
 			</div>
 		</div>
 	</div>
