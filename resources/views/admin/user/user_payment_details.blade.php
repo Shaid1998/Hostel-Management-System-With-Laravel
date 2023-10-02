@@ -12,7 +12,7 @@
 				<div>
 					<h5 style="font-family: 'Times New Roman', Times, serif;font-weight:800;font-size:35px;font-style:italic;color:aliceblue" class="mb-0">Payment Summary Of User</h5>
 				</div>
-				<div class="font-22 ms-auto"><a href='{{route('add.user.pay.details')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:15px;cursor:pointer;" class="btn btn-success" >ADD NEW PAYMENT DETAILS</a></div>
+				<div class="font-22 ms-auto"><a href='{{route('add.user.payment.details')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:15px;cursor:pointer;" class="btn btn-success" >ADD NEW PAYMENT DETAILS</a></div>
 			</div>
 			<hr>
 			<div style="background-color:black;" class="table-responsive">

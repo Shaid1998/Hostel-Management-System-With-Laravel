@@ -24,7 +24,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new.user.Payment.store') }}">
+                            <form id="myForm" method="post" action="{{ route('user.payment.record.update') }}">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$user->id}}" >
                                         
@@ -33,7 +33,7 @@
                                         <h6 class="mb-0">Person Name</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="person_name" class="form-control" placeholder="{{$user->person_name}}"/>
+                                        <input type="text" name="person_name" class="form-control" value="{{$user->person_name}}"/>
                                     </div>
                                 </div>
 
@@ -42,7 +42,7 @@
                                         <h6 class="mb-0">Payment Amount</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="payment_amount" class="form-control" placeholder="{{$user->payment_amount}}" />
+                                        <input type="text" name="payment_amount" class="form-control" value="{{$user->payment_amount}}" />
                                     </div>
                                 </div>
 
@@ -64,7 +64,7 @@
                                         <h6 class="mb-0">Payment Details</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <textarea type='text' name="payment_details" class="form-control" form="myForm" placeholder="{{$user->payment_details}}"></textarea>
+                                        <textarea type='text' name="payment_details" class="form-control" form="myForm" value="{{$user->payment_details}}"></textarea>
                                     </div>
                                 </div>
 
@@ -89,7 +89,7 @@
                                         <h6 class="mb-0">Payment Account Number</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="account_number" class="form-control" placeholder="{{$user->account_number}}"   />
+                                        <input type="text" name="account_number" class="form-control" value="{{$user->account_number}}"   />
                                     </div>
                                 </div>
 
@@ -98,14 +98,14 @@
                                         <h6 class="mb-0">Reference Code</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="reference_code" class="form-control" placeholder="{{$user->reference_code}}" />
+                                        <input type="text" name="reference_code" class="form-control" value="{{$user->reference_code}}" />
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="submit" class="btn btn-primary px-4" value="Edit Payment Details" />
+                                        <input type="submit" class="btn btn-primary px-4" value="Update Payment Details" />
                                     </div>
                                 </div>
                             </div>

@@ -700,6 +700,28 @@ class AdminController extends Controller
 
     } // End Mehtod
 
+    public function AdminUserPaymentRecordUpdate(Request $request){
+        $id = $request->id;
+
+        Payment::findOrFail($id)->update([
+            'person_name' => $request->person_name,
+            'payment_amount' => $request->payment_amount,
+            'person_designation' => $request->person_designation,
+            'payment_details' => $request->payment_details,
+            'payment_medium' => $request->payment_medium,
+            'account_number' => $request->account_number,
+            'reference_code' => $request->reference_code,
+        ]);
+
+       $notification = array(
+            'message' => 'User Payment Record Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.user.payment')->with($notification);
+        
+    } // End Mehtod 
+
     public function AdminUserPaymentRecordDelete($id){
 
         Payment::findOrFail($id)->delete();
@@ -731,5 +753,28 @@ class AdminController extends Controller
         return redirect()->back()->with($notification); 
 
     }// End Method
+
+    public function AdminWorkerPayRecordUpdate(Request $request){
+        $id = $request->id;
+       
+
+        Payment::findOrFail($id)->update([
+            'person_name' => $request->person_name,
+            'payment_amount' => $request->payment_amount,
+            'person_designation' => $request->person_designation,
+            'payment_details' => $request->payment_details,
+            'payment_medium' => $request->payment_medium,
+            'account_number' => $request->account_number,
+            'reference_code' => $request->reference_code,
+        ]);
+
+       $notification = array(
+            'message' => 'Worker Payment Record Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('admin.worker.pay')->with($notification);
+        
+    } // End Mehtod 
 
 }
