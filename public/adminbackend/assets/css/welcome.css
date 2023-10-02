@@ -106,7 +106,7 @@ button:hover{
 
 .x5{
   -webkit-animation: floatUp 8s infinite linear;
-  -moz-animation: floatUp 8s infinite linear;
+-moz-animation: floatUp 8s infinite linear;
   -o-animation: floatUp 8s infinite linear;
   animation: floatUp 8s infinite linear;
   -webkit-transform: scale(2.2);
