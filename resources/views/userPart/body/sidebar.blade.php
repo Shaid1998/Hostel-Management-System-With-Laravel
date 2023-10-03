@@ -39,35 +39,35 @@
 			</li>
 			<li>
 				<a href=" ">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Notice</div>
 				</a>
 			</li>
 			<li>
 				<a href=" ">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-tasks"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My ToDo List</div>
 				</a>
 			</li>
 			<li>
 				<a href=" ">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-align-left"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My Routine</div>
 				</a>
 			</li>
 			<li>
 				<a href=" ">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="far fa-file-alt"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Notes</div>
 				</a>
 			</li>
 			<li>
 				<a href=" ">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fa fa-address-book"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Hostel Contact</div>
 				</a>

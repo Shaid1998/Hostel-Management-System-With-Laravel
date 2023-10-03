@@ -105,7 +105,6 @@ class AdminController extends Controller
 
         $unid = IdGenerator::generate(['table' => 'users','field'=>'username', 'length' => 8, 'prefix' => 'U']);
 
-
         User::insert([
             'name' => $request->name,
             'username' => $unid,
