@@ -50,8 +50,8 @@ class AdminController extends Controller
     } // End Mehtod
 
     
-    public function AddNew(){
-        return view('admin.new_add');
+    public function AddNewUser(){
+        return view('admin.new_add_user');
 
     } // End Mehtod
 
@@ -92,16 +92,18 @@ class AdminController extends Controller
 
     } // End Mehtod
 
-    public function NewStore(Request $request){
+    public function NewUserStore(Request $request){
         $image = $request->file('photo');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
         $save_url = 'upload/user_images/'.$name_gen;
 
+        $unid = IdGenerator::generate(['table' => 'users','field'=>'username', 'length' => 8, 'prefix' => 'W']);
+
 
         User::insert([
             'name' => $request->name,
-            'username' => $request->username,
+            'username' => $unid,
             'email' => $request->email,
             'password' =>Hash::make($request->password),
             'phone' => $request->phone,
@@ -113,7 +115,7 @@ class AdminController extends Controller
         ]);
 
        $notification = array(
-            'message' => 'New People Added Successfully',
+            'message' => 'New User Added Successfully',
             'alert-type' => 'success'
         );
 

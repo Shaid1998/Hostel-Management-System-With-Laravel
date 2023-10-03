@@ -24,7 +24,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new') }}" enctype="multipart/form-data" >
+                            <form id="myForm" method="post" action="{{ route('admin.add.new.user.store') }}" enctype="multipart/form-data" >
                                 @csrf
                                 <input type="hidden" name="id" >
                                 <input type="hidden" name="old_image" >
@@ -35,15 +35,6 @@
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
                                         <input type="text" name="name" class="form-control"  required  />
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Username</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="username" class="form-control" required   />
                                     </div>
                                 </div>
 

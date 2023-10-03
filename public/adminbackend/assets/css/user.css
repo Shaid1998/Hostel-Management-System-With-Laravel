@@ -1,5 +1,5 @@
 .MainCont{
-    background-image: linear-gradient(to bottom right, rgb(234, 255, 0), rgb(22, 241, 241));
+    background-image: linear-gradient(to bottom right, rgb(231, 103, 38), rgb(241, 22, 219));
     text-align:center;
 }
 
@@ -19,10 +19,19 @@
     font-weight: 600;
     font-size: 25px;
     text-align: left;
+    color: rgb(240, 228, 47);
 }
 
 .showDataim{
     height: 100px;
     width: 100px;
     align-items: center;
+}
+
+.TTitile{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+    font-style: italic;
+    color: rgb(25, 0, 255);
 }
