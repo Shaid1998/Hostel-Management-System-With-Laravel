@@ -63,12 +63,10 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/all/worker/information', [AdminController::class, 'WorkerInformation'])->name('all.worker.information');
     Route::get('/admin/worker/information/edit/{id}', [AdminController::class, 'EditWorker'])->name('worker.information.edit');
     Route::get('/admin/worker/delete/{id}', [AdminController::class, 'DeleteWorker'])->name('worker.delete');
-
     Route::get('/admin/add/new/user', [AdminController::class, 'AddNewUser'])->name('add.new.user');
     Route::post('/admin/add/new/user/store', [AdminController::class, 'NewUserStore'])->name('admin.add.new.user.store');
     Route::get('/admin/add/new/worker', [AdminController::class, 'AddNewWorker'])->name('add.new.worker');
     Route::post('/admin/add/new/worker/store', [AdminController::class, 'NewStoreWorker'])->name('admin.add.new.worker');
-
     Route::get('/admin/all/message', [AdminController::class, 'AllIncomingMessage'])->name('all.incomeing.messages');
     Route::get('/admin/message/delete/{id}', [AdminController::class, 'DeleteMessage'])->name('message.delete');
     Route::get('/admin/notice/delete/{id}', [AdminController::class, 'DeleteNotice'])->name('delete.notice');
