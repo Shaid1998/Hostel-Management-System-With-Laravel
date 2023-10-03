@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactForGuest;
+use App\Models\note;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,6 +52,12 @@ class UserController extends Controller
     public function UserHostelContact(){
         $serviceall = ContactForGuest::all();
         return view('userPart.hostel_contact',compact('serviceall'));
+    }//End Method
+
+    public function UserNotesList(){
+        $username = Auth::user()->username;
+        $note = note::where('username',$username)->latest()->get();
+        return view('userPart.Notes.notes',compact('note'));
     }//End Method
 
     public function UserProfileStore(Request $request){

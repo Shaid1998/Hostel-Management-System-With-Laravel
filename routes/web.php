@@ -125,6 +125,8 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
     Route::get('/user/information', [UserController::class, 'UserInformation'])->name('user.information');
     Route::get('/user/hostel/contact', [UserController::class, 'UserHostelContact'])->name('user.hostel.contact');
+    Route::get('/user/notes/list', [UserController::class, 'UserNotesList'])->name('user.notes.list');
+    Route::get('/user/add/note', [UserController::class, 'UserAddNote'])->name('user.add.note');
 });
 
 
