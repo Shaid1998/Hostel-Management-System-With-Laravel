@@ -177,4 +177,10 @@ class UserController extends Controller
         return redirect()->back()->with($notification); 
 
     }// End Method
+
+    public function UserOwnPhotoGallary(){
+        $username = Auth::user()->username;
+        $photo = note::where('username',$username)->latest()->get();
+        return view('userPart.PhotoGallary.user_photo',compact('photo'));
+    }//End Method
 }

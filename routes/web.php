@@ -132,7 +132,7 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/note/edit/{id}', [UserController::class, 'UserNoteEdit'])->name('user.note.edit');
     Route::get('/user/note/delete/{id}', [UserController::class, 'UserNoteDelete'])->name('user.note.delete');
     Route::post('/user/note/update', [UserController::class, 'NoteUpdate'])->name('user.note.update');
-
+    Route::get('/user/own/photo/gallary', [UserController::class, 'UserOwnPhotoGallary'])->name('user.own.photo.galary');
 
 });
 

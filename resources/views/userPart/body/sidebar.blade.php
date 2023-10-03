@@ -52,10 +52,10 @@
 				</a>
 			</li>
 			<li>
-				<a href=" ">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-align-left"></i>
+				<a href="{{route('user.own.photo.galary')}}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-image"></i>
 					</div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My Routine</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My Gallary</div>
 				</a>
 			</li>
 			<li>
