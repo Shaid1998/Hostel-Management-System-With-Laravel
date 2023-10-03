@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\ContactForGuest;
 use App\Models\note;
 use App\Models\User;
+use App\Models\UserPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Image;
 
 class UserController extends Controller
 {
@@ -184,7 +186,29 @@ class UserController extends Controller
 
     public function UserOwnPhotoGallary(){
         $username = Auth::user()->username;
-        $photo = note::where('username',$username)->latest()->get();
+        $photo = UserPhoto::where('username',$username)->latest()->get();
         return view('userPart.PhotoGallary.user_photo',compact('photo'));
+    }//End Method
+
+    public function UserAddPhotoGallaryStore(Request $request){
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/user_images/uploaded/'.$name_gen);
+        $save_url = 'upload/user_images/uploaded/'.$name_gen;
+
+        $username = Auth::user()->username;
+        UserPhoto::insert([
+            'username' => $username,
+            'photo_title' => $request->photo_title,
+            'photo_text' => $request->photo_text,
+            'photo' => $save_url
+        ]);
+
+       $notification = array(
+            'message' => 'New Photo Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('user.own.photo.galary')->with($notification);
     }//End Method
 }

@@ -25,7 +25,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('admin.add.new.photo.store') }}" enctype="multipart/form-data" >
+                            <form id="myForm" method="post" action="{{ route('user.photo.gallary.store') }}" enctype="multipart/form-data" >
                                 @csrf
                                 <input type="hidden" name="id" >
                                 <input type="hidden" name="old_image" >
@@ -41,28 +41,10 @@
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">photo Credit</h6>
+                                        <h6 class="mb-0">photo Text</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="photo_credit" class="form-control" required   />
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Visible To</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <select name='photo_for' required>
-                                            <option value="">Select One</option>
-                                            <option value="all">All</option>
-                                            <option value="admin">Admin</option>
-                                            <option value="worker">Worker</option>
-                                            <option value="user">User</option>
-                                            <option value="guest">Guest</option>
-                                        </select>
+                                        <input type="text" name="photo_text" class="form-control" required   />
                                     </div>
                                 </div>
 
@@ -80,14 +62,14 @@
                                         <h6 class="mb-0"> </h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <img id="showImage"  alt="Admin" style="width:100px; height: 100px;"  >
+                                        <img id="showImage"  alt="my photo" style="width:100px; height: 100px;"  >
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="submit" class="btn btn-primary px-4" value="Upload Image" />
+                                        <input type="submit" class="btn btn-primary px-4" value="Upload Photo" />
                                     </div>
                                 </div>
                             </div>

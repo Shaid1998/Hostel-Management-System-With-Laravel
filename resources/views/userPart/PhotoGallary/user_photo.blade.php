@@ -7,8 +7,6 @@
 
     <div class=" card MYphotoP"><a href='{{ route('user.photo.gallary.add') }}' id="update" class="btn btn-primary PhotoAddNewButton" >ADD NEW</a></div>
     @foreach ($photo as $photo)
-        
-    @endforeach
     <div class="container">
         <div class="row uPhR">		 
             <div class="column uPhC1">
@@ -22,6 +20,8 @@
             </div>
         </div>
     </div>
+    @endforeach
+    
 </div>
 
 @endsection
