@@ -124,6 +124,7 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');
     Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
     Route::get('/user/information', [UserController::class, 'UserInformation'])->name('user.information');
+    Route::get('/user/hostel/contact', [UserController::class, 'UserHostelContact'])->name('user.hostel.contact');
 });
 
 

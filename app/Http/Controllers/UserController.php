@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactForGuest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,11 @@ class UserController extends Controller
         return view('userPart.user_profile_view',compact('userData'));
 
     } // End Mehtod 
+
+    public function UserHostelContact(){
+        $serviceall = ContactForGuest::all();
+        return view('userPart.hostel_contact',compact('serviceall'));
+    }//End Method
 
     public function UserProfileStore(Request $request){
 
