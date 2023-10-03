@@ -150,7 +150,7 @@ class UserController extends Controller
         $username = Auth::user()->username;
 
         $id = $request->id;
-        
+
         note::findOrFail($id)->update([
             'username' => $username,
             'note_title' => $request->note_title,
@@ -164,4 +164,17 @@ class UserController extends Controller
 
             return redirect()->route('user.notes.list')->with($notification);
     }//End Method
+
+    public function UserNoteDelete($id){
+
+        note::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Note Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
 }

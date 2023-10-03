@@ -34,7 +34,7 @@
                             <td>
 								<a href='{{route('user.note.view',$note->id)}}' id="view" class="btn btn-success noteButton" >VIEW</a>
 								<a href='{{route('user.note.edit',$note->id)}}' id="update" class="btn btn-primary noteButton" >UPDATE</a>
-								<a href='#' id="delete" class="btn btn-danger noteButton" >DELETE</a>
+								<a href='{{route('user.note.delete',$note->id)}}' id="delete" class="btn btn-danger noteButton" >DELETE</a>
 							</td>
                         </tr>
                     </tbody>
