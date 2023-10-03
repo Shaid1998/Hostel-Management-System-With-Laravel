@@ -133,6 +133,7 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/note/delete/{id}', [UserController::class, 'UserNoteDelete'])->name('user.note.delete');
     Route::post('/user/note/update', [UserController::class, 'NoteUpdate'])->name('user.note.update');
     Route::get('/user/own/photo/gallary', [UserController::class, 'UserOwnPhotoGallary'])->name('user.own.photo.galary');
+    Route::get('/user/add/photo/gallary', [UserController::class, 'UserAddPhotoGallary'])->name('user.photo.gallary.add');
 
 });
 

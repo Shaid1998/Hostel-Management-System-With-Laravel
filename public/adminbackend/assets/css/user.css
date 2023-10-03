@@ -1,5 +1,10 @@
 .MainCont{
-    background-image: linear-gradient(to bottom right, rgb(231, 103, 38), rgb(241, 22, 219));
+    background-image: linear-gradient(to bottom right, rgb(231, 103, 38), rgb(102, 64, 186));
+    text-align:center;
+}
+
+.PMainCont{
+    background-image: linear-gradient(to bottom right, rgb(186, 167, 47), rgb(241, 22, 219));
     text-align:center;
 }
 
@@ -89,4 +94,83 @@
     color:white;
     border: 0;
     border-radius: 25px;
+}
+
+.uPhR{
+    background-color: black;
+    margin-top:1rem
+    
+}
+
+.uPhC1{
+    height: 300px;
+    width:40%;
+    align-items:center
+}
+
+.uPhC2{
+    height: 300px;
+    width:60%;
+    text-align:center
+}
+
+.userPhotoG{
+    height: 280px;
+    width:100%;
+    padding-top:1rem;
+}
+
+.photoGTitle{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:35px;
+    padding:1rem;
+    color:aliceblue;
+}
+
+.photoGText{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:25px;
+    padding:1rem;
+    color:aliceblue;
+}
+
+.MYphoto{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:70px;
+    text-align:center;
+    background-color:black;
+    color:rgb(14, 211, 242);
+    border: 0;
+    border-radius: 50px;
+}
+
+.MYphotoP{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:70px;
+    text-align:center;
+    color:rgb(14, 211, 242);
+    border: 0;
+    border-radius: 50px;
+    align-items: end;
+    background-image: linear-gradient(to bottom right, rgb(186, 167, 47), rgb(241, 22, 219));
+}
+
+.PhotoAddNewButton{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+    border: 0;
+    border-radius: 25px;
+    align-items: end;
+    width: 20%;
 }

@@ -1,23 +1,24 @@
 @extends('userPart.user_Dashboard')
 @section('user')
 
-<div class="page-content"> 
-    <!--breadcrumb-->
-    
-        <div style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:70px;text-align:center;background-color:black;color:blue">Photo Gallary</div>
-    <!--end breadcrumb-->
+<div class="page-content PMainCont"> 
+
+    <div class=" card MYphoto">MY PHOTO</div>
+
+    <div class=" card MYphotoP"><a href='{{ route('user.photo.gallary.add') }}' id="update" class="btn btn-primary PhotoAddNewButton" >ADD NEW</a></div>
     @foreach ($photo as $photo)
         
     @endforeach
     <div class="container">
-        <div style="background-color: black;margin-top:1rem" class="row">		 
-            <div style="height: 300px;width:40%;align-items:center" class="column">
-                <img src="{{$photosall->photo}}" style="height: 280px;width:100%;padding-top:1rem;">
+        <div class="row uPhR">		 
+            <div class="column uPhC1">
+                <img src="{{$photo->photo}}" class="userPhotoG">
             </div>
-            <div style="height: 300px;width:60%;text-align:center" class="column">
-                <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:500;font-style:italic;font-size:35px;padding:1rem;color:aliceblue;">{{$photo->photo_title}}</h1>
-                <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:500;font-style:italic;font-size:25px;padding:1rem;color:aliceblue;">@credit:<span style="padding-left: 1rem">{{$photo->photo_credit}}</span></h1>
-                <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:500;font-style:italic;font-size:25px;padding:1rem;color:aliceblue;">Upload Date:<span style="padding-left: 1rem">{{$photo->created_at}}</span></h1>
+            <div class="column uPhC2">
+                <h1 class="photoGTitle">{{$photo->photo_title}}</h1>
+                <h1 class="photoGText">{{$photo->photo_text}}</h1>
+                <a href='#' id="update" class="btn btn-primary noteButton" >UPDATE</a>
+				<a href='#' id="delete" class="btn btn-danger noteButton" >DELETE</a>
             </div>
         </div>
     </div>

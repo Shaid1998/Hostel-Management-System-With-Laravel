@@ -33,6 +33,10 @@ class UserController extends Controller
         return view('userPart.Notes.add_note');
     } // End Mehtod 
 
+    public function UserAddPhotoGallary(){
+        return view('userPart.PhotoGallary.add_photo');
+    } // End Mehtod 
+
 
     public function UserDestroy(Request $request){
         Auth::guard('web')->logout();
