@@ -129,6 +129,9 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/add/note', [UserController::class, 'UserAddNote'])->name('user.add.note');
     Route::post('/user/note/store', [UserController::class, 'NoteStore'])->name('user.note.store');
     Route::get('/user/note/view/{id}', [UserController::class, 'UserNoteView'])->name('user.note.view');
+    Route::get('/user/note/edit/{id}', [UserController::class, 'UserNoteEdit'])->name('user.note.edit');
+    Route::post('/user/note/update', [UserController::class, 'NoteUpdate'])->name('user.note.update');
+
 
 });
 

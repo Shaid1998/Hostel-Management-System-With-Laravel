@@ -26,7 +26,7 @@
         <div class="card-body">
             <div class=" align-items-center">
                 <div class="row">
-                    <div class="column btnColumn1"><a href='#'  id="update" class="btn btn-primary noteButton" >UPDATE</a></div>
+                    <div class="column btnColumn1"><a href='{{route('user.note.edit',$note->id)}}'  id="update" class="btn btn-primary noteButton" >UPDATE</a></div>
                     <div class="column btnColumn2"><a id="delete" class="btn btn-danger noteButton" >DELETE</a></div>
                 </div>
             </div>

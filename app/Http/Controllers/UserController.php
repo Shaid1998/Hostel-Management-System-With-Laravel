@@ -141,5 +141,27 @@ class UserController extends Controller
         $note = note::findOrFail($id);
         return view('userPart.Notes.view_note',compact('note'));
     } // End Mehtod
-   
+
+    public function UserNoteEdit($id){
+        $note = note::findOrFail($id);
+        return view('userPart.Notes.edit_note',compact('note'));
+    } // End Mehtod
+    public function NoteUpdate(Request $request){
+        $username = Auth::user()->username;
+
+        $id = $request->id;
+        
+        note::findOrFail($id)->update([
+            'username' => $username,
+            'note_title' => $request->note_title,
+            'note_text' =>$request->note_text,
+        ]);
+
+       $notification = array(
+            'message' => 'Note Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('user.notes.list')->with($notification);
+    }//End Method
 }
