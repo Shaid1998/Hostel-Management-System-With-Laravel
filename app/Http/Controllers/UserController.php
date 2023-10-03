@@ -137,6 +137,9 @@ class UserController extends Controller
     }//End Method
 
 
-
+    public function UserNoteView($id){
+        $note = note::findOrFail($id);
+        return view('userPart.Notes.view_note',compact('note'));
+    } // End Mehtod
    
 }
