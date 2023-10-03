@@ -13,3 +13,16 @@
     padding-top:5px;
     color:aliceblue;
 }
+
+.showData{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 25px;
+    text-align: left;
+}
+
+.showDataim{
+    height: 100px;
+    width: 100px;
+    align-items: center;
+}
