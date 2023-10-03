@@ -152,6 +152,12 @@ class UserController extends Controller
         $note = note::findOrFail($id);
         return view('userPart.Notes.edit_note',compact('note'));
     } // End Mehtod
+
+    public function UserPhotoGallaryEdit($id){
+        $photo = UserPhoto::findOrFail($id);
+        return view('userPart.PhotoGallary.edit_photo',compact('photo'));
+    } // End Mehtod
+
     public function NoteUpdate(Request $request){
         $username = Auth::user()->username;
 
@@ -177,6 +183,19 @@ class UserController extends Controller
 
         $notification = array(
             'message' => 'Note Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function UserPhotoGallaryDelete($id){
+
+        UserPhoto::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Photo Deleted Successfully',
             'alert-type' => 'success'
         );
 
@@ -211,4 +230,51 @@ class UserController extends Controller
 
             return redirect()->route('user.own.photo.galary')->with($notification);
     }//End Method
+
+    public function UserPhotoGallaryUpdate(Request $request){
+        $id = $request->id;
+        $old_img = $request->old_image;
+        $username = Auth::user()->username;
+
+        if ($request->file('photo')) {
+
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/user_images/uploaded/'.$name_gen);
+        $save_url = 'upload/user_images/uploaded/'.$name_gen;
+
+        if (file_exists($old_img)) {
+           unlink($old_img);
+        }
+
+        
+
+        UserPhoto::findOrFail($id)->update([
+            'username' => $username,
+            'photo_title' => $request->photo_title,
+            'photo_text' => $request->photo_text,
+            'photo' => $save_url
+        ]);
+
+       $notification = array(
+            'message' => 'Photo Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('user.own.photo.galary')->with($notification);
+        }else {
+
+            UserPhoto::findOrFail($id)->update([
+                'username' => $username,
+                'photo_title' => $request->photo_title,
+                'photo_text' => $request->photo_text,
+                'photo' => $save_url,
+            ]);
+           $notification = array(
+                'message' => 'Photo And PhotoInformation Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('user.own.photo.galary')->with($notification); 
+       }
+    } // End Mehtod 
 }

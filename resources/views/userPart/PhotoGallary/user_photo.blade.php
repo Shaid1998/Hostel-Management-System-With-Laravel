@@ -15,8 +15,8 @@
             <div class="column uPhC2">
                 <h1 class="photoGTitle">{{$photo->photo_title}}</h1>
                 <h1 class="photoGText">{{$photo->photo_text}}</h1>
-                <a href='#' id="update" class="btn btn-primary noteButton" >UPDATE</a>
-				<a href='#' id="delete" class="btn btn-danger noteButton" >DELETE</a>
+                <a href='{{route('user.photo.gallary.edit',$photo->id)}}' id="update" class="btn btn-primary noteButton" >UPDATE</a>
+				<a href='{{route('user.photo.gallary.delete',$photo->id)}}' id="delete" class="btn btn-danger noteButton" >DELETE</a>
             </div>
         </div>
     </div>

@@ -135,6 +135,9 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/own/photo/gallary', [UserController::class, 'UserOwnPhotoGallary'])->name('user.own.photo.galary');
     Route::get('/user/add/photo/gallary', [UserController::class, 'UserAddPhotoGallary'])->name('user.photo.gallary.add');
     Route::post('/user/add/photo/gallary/store', [UserController::class, 'UserAddPhotoGallaryStore'])->name('user.photo.gallary.store');
+    Route::get('/user/photo/gallary/{id}', [UserController::class, 'UserPhotoGallaryEdit'])->name('user.photo.gallary.edit');
+    Route::get('/user/photo/gallary/delete/{id}', [UserController::class, 'UserPhotoGallaryDelete'])->name('user.photo.gallary.delete');
+    Route::post('/user/photo/gallary/update', [UserController::class, 'UserPhotoGallaryUpdate'])->name('user.photo.gallary.update');
 
 });
 
