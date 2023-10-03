@@ -29,6 +29,10 @@ class UserController extends Controller
         return view('userPart.user_login');
     } // End Mehtod 
 
+    public function UserAddNote(){
+        return view('userPart.Notes.add_note');
+    } // End Mehtod 
+
 
     public function UserDestroy(Request $request){
         Auth::guard('web')->logout();
@@ -115,6 +119,22 @@ class UserController extends Controller
         return back()->with("status", " Password Changed Successfully");
 
     } // End Mehtod 
+
+    public function NoteStore(Request $request){
+        $username = Auth::user()->username;
+        note::insert([
+            'username' => $username,
+            'note_title' => $request->note_title,
+            'note_text' =>$request->note_text,
+        ]);
+
+       $notification = array(
+            'message' => 'New Note Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('user.notes.list')->with($notification);
+    }//End Method
 
 
 
