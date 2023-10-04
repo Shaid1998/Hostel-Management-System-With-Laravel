@@ -169,13 +169,12 @@ Route::middleware(['auth','role:worker'])->group(function() {
     Route::post('/worker/update/password', [WorkerController::class, 'WorkerUpdatePassword'])->name('worker.update.password');
     Route::get('/important/contact', [WorkerController::class, 'ImportantContact'])->name('important.contact');
     Route::get('/worker/information', [WorkerController::class, 'WorkerInformation'])->name('worker.information');
-
-    Route::get('/worker/task/list', [UserController::class, 'WorkerTaskList'])->name('worker.task.list');
-    Route::get('/worker/add/task', [UserController::class, 'WorkerAddTask'])->name('worker.task.add');
-    Route::post('/worker/add/task/store', [UserController::class, 'WorkerAddTaskStore'])->name('worker.task.store');
-    Route::get('/worker/task/{id}', [UserController::class, 'WorkerTaskEdit'])->name('worker.task.edit');
-    Route::get('/worker/task/delete/{id}', [UserController::class, 'WorkerTaskDelete'])->name('worker.task.delete');
-    Route::post('/worker/task/update', [UserController::class, 'WorkerTaskUpdate'])->name('worker.task.update');
-    Route::get('/worker/task/view/{id}', [UserController::class, 'WorkerTaskView'])->name('worker.task.view');
+    Route::get('/worker/task/list', [WorkerController::class, 'WorkerTaskList'])->name('worker.task.list');
+    Route::get('/worker/add/task', [WorkerController::class, 'WorkerAddTask'])->name('worker.task.add');
+    Route::post('/worker/add/task/store', [WorkerController::class, 'WorkerAddTaskStore'])->name('worker.task.store');
+    Route::get('/worker/task/{id}', [WorkerController::class, 'WorkerTaskEdit'])->name('worker.task.edit');
+    Route::get('/worker/task/delete/{id}', [WorkerController::class, 'WorkerTaskDelete'])->name('worker.task.delete');
+    Route::post('/worker/task/update', [WorkerController::class, 'WorkerTaskUpdate'])->name('worker.task.update');
+    Route::get('/worker/task/view/{id}', [WorkerController::class, 'WorkerTaskView'])->name('worker.task.view');
 });
 

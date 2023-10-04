@@ -1,5 +1,5 @@
-@extends('userPart.user_Dashboard')
-@section('user')
+@extends('worker.worker_dashboard')
+@section('worker')
 
 <div class="page-content taskPage">
     <div class="card radius-25">
@@ -8,7 +8,7 @@
                 <div class=" align-items-center">
                     <div class="row">
                         <div class="column TC1"><h5 class="mb-0 TaskListTitle">All Task's List</h5></div>
-                        <div class="column TC2"><a href='{{ route ('user.task.add')}}' class="btn btn-success TaskAddButton" >ADD NEW TASK</a></div>
+                        <div class="column TC2"><a href='{{ route ('worker.task.add')}}' class="btn btn-success TaskAddButton" >ADD NEW TASK</a></div>
                     </div>
                 </div>
             </div>
@@ -32,9 +32,9 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue;width:20%;text-aligh:center;">{{$task->created_at}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue;width:30%;text-aligh:center;">{{$task->updated_at}}</td>
                             <td>
-								<a href='{{route('user.task.view',$task->id)}}' id="view" class="btn btn-success noteButton" >VIEW</a>
-								<a href='{{route('user.task.edit',$task->id)}}' id="update" class="btn btn-primary noteButton" >UPDATE</a>
-								<a href='{{route('user.task.delete',$task->id)}}' id="delete" class="btn btn-danger noteButton" >DELETE</a>
+								<a href='{{route('worker.task.view',$task->id)}}' id="view" class="btn btn-success noteButton" >VIEW</a>
+								<a href='{{route('worker.task.edit',$task->id)}}' id="update" class="btn btn-primary noteButton" >UPDATE</a>
+								<a href='{{route('worker.task.delete',$task->id)}}' id="delete" class="btn btn-danger noteButton" >DELETE</a>
 							</td>
                         </tr>
                     </tbody>

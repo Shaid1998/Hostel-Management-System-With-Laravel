@@ -1,6 +1,5 @@
-@extends('userPart.user_Dashboard')
-@section('user')
-
+@extends('worker.worker_dashboard')
+@section('worker')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -25,7 +24,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{ route('user.task.store') }}" >
+                            <form id="myForm" method="post" action="{{ route('worker.task.store') }}" >
                                 @csrf
                                 <input type="hidden" name="username" >
                                         
