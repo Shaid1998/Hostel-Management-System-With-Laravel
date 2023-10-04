@@ -2,90 +2,12 @@
 @section('user')
  
 
-<div class="page-content">
-	<div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
-		<div class="col">
-			<div class="card radius-10 bg-gradient-deepblue">
-				<div class="card-body">
-					<div class="d-flex align-items-center">
-						<h5 class="mb-0 text-white">2</h5>
-						<div class="ms-auto">
-							<i class='fas fa-user-cog fs-3 text-white'></i>
-						</div>
-					</div>
-					<div class="progress my-3 bg-light-transparent" style="height:3px;">
-						<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-					</div>
-					<div class="d-flex align-items-center text-white">
-						<p class="mb-0">Total Admin</p>
-						<p class="mb-0 ms-auto">--<span><i class='bx bx-up-arrow-alt'></i></span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card radius-10 bg-gradient-orange">
-				<div class="card-body">
-					<div class="d-flex align-items-center">
-						<h5 class="mb-0 text-white">200000</h5>
-						<div class="ms-auto">
-							<i class='far fa-file-alt fs-3 text-white'></i>
-						</div>
-					</div>
-					<div class="progress my-3 bg-light-transparent" style="height:3px;">
-						<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-					</div>
-					<div class="d-flex align-items-center text-white">
-						<p class="mb-0">Total Post</p>
-						<p class="mb-0 ms-auto">+1.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card radius-10 bg-gradient-ohhappiness">
-				<div class="card-body">
-					<div class="d-flex align-items-center">
-						<h5 class="mb-0 text-white">2000</h5>
-						<div class="ms-auto">
-							<i class='fas fa-user-alt fs-3 text-white'></i>
-						</div>
-					</div>
-					<div class="progress my-3 bg-light-transparent" style="height:3px;">
-						<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-					</div>
-					<div class="d-flex align-items-center text-white">
-						<p class="mb-0">Total User</p>
-						<p class="mb-0 ms-auto">+9.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card radius-10 bg-gradient-ibiza">
-				<div class="card-body">
-					<div class="d-flex align-items-center">
-						<h5 class="mb-0 text-white">200</h5>
-						<div class="ms-auto">
-							<i class='fas fa-user-alt fs-3 text-white'></i>
-						</div>
-					</div>
-					<div class="progress my-3 bg-light-transparent" style="height:3px;">
-						<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-					</div>
-					<div class="d-flex align-items-center text-white">
-						<p class="mb-0">Messages</p>
-						<p class="mb-0 ms-auto">+11.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!--end row-->
-	<div class="card radius-10">
+<div class="page-content MainCont">
+	<div class="card radius-10 taskPage">
 		<div class="card-body">
 			<div class="d-flex align-items-center">
 				<div>
-					<h5 class="mb-0">Orders Summary</h5>
+					<h5 class="mb-0">Recent Payment Summary</h5>
 				</div>
 				<div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
 				</div>
@@ -93,18 +15,29 @@
 			<hr>
 			<div class="table-responsive">
 				<table class="table align-middle mb-0">
-					<thead class="table-light">
+					<thead class="table-dark">
 						<tr>
-							<th>Sl</th>
-							<th>Date</th>
-							<th>Invoice</th>
-							<th>Amount</th>
-							<th>Payment</th>
-							<th>Status</th> 
+							<th style="width:5%;" class="NoticeVHEAD">Sl</th>
+							<th style="width:10%;" class="NoticeVHEAD">Date</th>
+							<th style="width:10%;" class="NoticeVHEAD">Amount</th>
+							<th style="width:60%;" class="NoticeVHEAD">Details</th>
+							<th style="width:7%;padding-right:2rem" class="NoticeVHEAD">Account</th>
+							<th style="width:8%;" class="NoticeVHEAD">Reference</th> 
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
+					@foreach ($payment as $payment)
+                        <tbody>
+                            <tr>
+                                <td style="width:5%;" class="noticeUView">{{$payment->id}}</td>
+                                <td style="width:10%;" class="noticeUView">{{$payment->created_at}}</td>
+                                <td style="width:10%;" class="noticeUView">{{$payment->payment_amount}}</td>
+								<td style="width:50%;" class="noticeUView">{!! nl2br ($payment->payment_details) !!}</td>
+                                <td style="width:15%;" class="noticeUView">{{$payment->account_number}}</td>
+                                <td style="width:10%;" class="noticeUView">{{$payment->reference_code}}</td>
+                                
+                            </tr>
+                        </tbody>
+                    @endforeach
 				</table>
 			</div>
 		</div>

@@ -680,10 +680,8 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminNewUserPaymentRecordStore(Request $request){
-        $unid = IdGenerator::generate(['table' => 'payments','field'=>'unique_payment_id', 'length' => 8, 'prefix' => 'U']);
-        //$unid = Str::random(9);
         Payment::insert([
-            'unique_payment_id' => $unid,
+            'username' => $request->username,
             'person_name' => $request->person_name,
             'payment_amount' => $request->payment_amount,
             'person_designation' => $request->person_designation,
@@ -711,10 +709,9 @@ class AdminController extends Controller
     }//End Method
 
     public function AdminNewWorkerPayRecordStore(Request $request){
-        $unid = IdGenerator::generate(['table' => 'payments','field'=>'unique_payment_id', 'length' => 8, 'prefix' => 'W']);
-        //$unid = Str::random(9);
+        
         Payment::insert([
-            'unique_payment_id' => $unid,
+            'username' => $request->username,
             'person_name' => $request->person_name,
             'payment_amount' => $request->payment_amount,
             'person_designation' => $request->person_designation,
@@ -743,6 +740,7 @@ class AdminController extends Controller
 
         Payment::findOrFail($id)->update([
             'person_name' => $request->person_name,
+            'username' => $request->username,
             'payment_amount' => $request->payment_amount,
             'person_designation' => $request->person_designation,
             'payment_details' => $request->payment_details,
@@ -798,6 +796,7 @@ class AdminController extends Controller
 
         Payment::findOrFail($id)->update([
             'person_name' => $request->person_name,
+            'username' => $request->username,
             'payment_amount' => $request->payment_amount,
             'person_designation' => $request->person_designation,
             'payment_details' => $request->payment_details,

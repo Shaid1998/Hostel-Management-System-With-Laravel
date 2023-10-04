@@ -6,6 +6,7 @@ use App\Models\ContactForGuest;
 use App\Models\GenarelMessage;
 use App\Models\note;
 use App\Models\Notice;
+use App\Models\Payment;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\UserPhoto;
@@ -17,8 +18,9 @@ use Image;
 class UserController extends Controller
 {
     public function UserDashboard(){
-
-        return view('userPart.user_index');
+        $username = Auth::user()->username;
+        $payment = Payment::where('username',$username)->latest()->get();
+        return view('userPart.user_index',compact('payment'));
 
     } // End Mehtod 
 
