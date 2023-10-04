@@ -5,6 +5,7 @@ use App\Models\Task;
 use App\Models\ContactForGuest;
 use App\Models\Notice;
 use App\Models\User;
+use App\Models\UserPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -198,5 +199,102 @@ class WorkerController extends Controller
         
         return view('worker.Notice.user_notice_view',compact('notice'));
     }//End Method
+
+    public function WorkerAddPhotoGallary(){
+        return view('worker.PhotoGallary.add_photo');
+    } // End Mehtod 
+
+    public function WorkerPhotoGallaryEdit($id){
+        $photo = UserPhoto::findOrFail($id);
+        return view('worker.PhotoGallary.edit_photo',compact('photo'));
+    } // End Mehtod
+
+    public function WorkerPhotoGallaryDelete($id){
+
+        UserPhoto::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Photo Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function WorkerOwnPhotoGallary(){
+        $username = Auth::user()->username;
+        $photo = UserPhoto::where('username',$username)->latest()->get();
+        return view('userPart.PhotoGallary.user_photo',compact('photo'));
+    }//End Method
+
+    public function WorkerAddPhotoGallaryStore(Request $request){
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/worker_images/uploaded/'.$name_gen);
+        $save_url = 'upload/worker_images/uploaded/'.$name_gen;
+
+        $username = Auth::user()->username;
+        UserPhoto::insert([
+            'username' => $username,
+            'photo_title' => $request->photo_title,
+            'photo_text' => $request->photo_text,
+            'photo' => $save_url
+        ]);
+
+       $notification = array(
+            'message' => 'New Photo Added Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('worker.own.photo.galary')->with($notification);
+    }//End Method
+
+    public function WorkerPhotoGallaryUpdate(Request $request){
+        $id = $request->id;
+        $old_img = $request->old_image;
+        $username = Auth::user()->username;
+
+        if ($request->file('photo')) {
+
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/worker_images/uploaded/'.$name_gen);
+        $save_url = 'upload/worker_images/uploaded/'.$name_gen;
+
+        if (file_exists($old_img)) {
+           unlink($old_img);
+        }
+
+        
+
+        UserPhoto::findOrFail($id)->update([
+            'username' => $username,
+            'photo_title' => $request->photo_title,
+            'photo_text' => $request->photo_text,
+            'photo' => $save_url
+        ]);
+
+       $notification = array(
+            'message' => 'Photo Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('worker.own.photo.galary')->with($notification);
+        }else {
+
+            UserPhoto::findOrFail($id)->update([
+                'username' => $username,
+                'photo_title' => $request->photo_title,
+                'photo_text' => $request->photo_text,
+                'photo' => $save_url,
+            ]);
+           $notification = array(
+                'message' => 'Photo And PhotoInformation Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('worker.own.photo.galary')->with($notification); 
+       }
+    } // End Mehtod 
 }
 
