@@ -26,8 +26,9 @@
         <div class="card-body">
             <div class=" align-items-center">
                 <div class="row">
-                    <div class="column btnColumn1"><a href='{{route('user.note.edit',$note->id)}}'  id="update" class="btn btn-primary noteButton" >UPDATE</a></div>
-                    <div class="column btnColumn2"><a href="{{route('user.note.delete',$note->id)}}" id="delete" class="btn btn-danger noteButton" >DELETE</a></div>
+                    <div class="column btnColumn1"><a href='{{route('user.notes.list')}}' id="view" class="btn btn-success noteButton" >LIST</a></div>
+                    <div class="column btnColumn2"><a href='{{route('user.note.edit',$note->id)}}'  id="update" class="btn btn-primary noteButton" >UPDATE</a></div>
+                    <div class="column btnColumn3"><a href="{{route('user.note.delete',$note->id)}}" id="delete" class="btn btn-danger noteButton" >DELETE</a></div>
                 </div>
             </div>
         </div>

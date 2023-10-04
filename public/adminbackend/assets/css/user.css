@@ -86,12 +86,17 @@
 }
 
 .btnColumn1{
-    width: 50%;
-    padding-top:1pxrem;
+    width: 33%;
+    padding-top:1px;
 }
 
 .btnColumn2{
-    width: 50%;
+    width: 33%;
+    padding-top:1px;
+}
+
+.btnColumn3{
+    width: 34%;
     padding:1px;
 }
 

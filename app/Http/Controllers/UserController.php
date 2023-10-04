@@ -335,4 +335,17 @@ class UserController extends Controller
 
             return redirect()->route('user.task.list')->with($notification);
     }//End Method
+
+    public function UserTaskDelete($id){
+
+        Task::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Task Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
 }
