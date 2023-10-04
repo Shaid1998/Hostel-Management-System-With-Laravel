@@ -159,6 +159,11 @@ class UserController extends Controller
         return view('userPart.Notes.view_note',compact('note'));
     } // End Mehtod
 
+    public function UserTaskView($id){
+        $task = Task::findOrFail($id);
+        return view('userPart.ToDoList.view_task',compact('task'));
+    } // End Mehtod
+
     public function UserNoteEdit($id){
         $note = note::findOrFail($id);
         return view('userPart.Notes.edit_note',compact('note'));

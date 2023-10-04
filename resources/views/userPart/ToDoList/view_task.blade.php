@@ -7,7 +7,7 @@
             <div >
                 <div>
                     <h6 class="TitleWord">TITLE </h6>
-                    <h5 class="mb-0 noteTitle">{{$note->note_title}}</h5>
+                    <h5 class="mb-0 noteTitle">{{$task->task_title}}</h5>
                 </div>
             </div>
         </div> 
@@ -16,8 +16,8 @@
         <div class="card-body">
             <div>
                 <div>
-                    <h6 class="TitleWord">NOTE</h6>
-                    <h5  class="mb-0 NoteText">{{$note->note_text}}</h5>
+                    <h6 class="TitleWord">TASK DETAILS</h6>
+                    <h5  class="mb-0 NoteText">{{$task->task}}</h5>
                 </div>
             </div>
         </div> 
@@ -26,8 +26,8 @@
         <div class="card-body">
             <div class=" align-items-center">
                 <div class="row">
-                    <div class="column btnColumn1"><a href='{{route('user.note.edit',$note->id)}}'  id="update" class="btn btn-primary noteButton" >UPDATE</a></div>
-                    <div class="column btnColumn2"><a href="{{route('user.note.delete',$note->id)}}" id="delete" class="btn btn-danger noteButton" >DELETE</a></div>
+                    <div class="column btnColumn1"><a href='{{route('user.task.edit',$task->id)}}'  id="update" class="btn btn-primary noteButton" >UPDATE</a></div>
+                    <div class="column btnColumn2"><a href="{{route('user.task.delete',$task->id)}}" id="delete" class="btn btn-danger noteButton" >DELETE</a></div>
                 </div>
             </div>
         </div>
