@@ -1,14 +1,14 @@
 @extends('userPart.user_Dashboard')
 @section('user')
 
-<div class="page-content taskPage">
+<div class="page-content notePage">
     <div class="card radius-25">
-        <div class="card-body taskLC">
+        <div class="card-body noteLC">
             <div class="card-body">
                 <div class=" align-items-center">
                     <div class="row">
-                        <div class="column TC1"><h5 class="mb-0 TaskListTitle">All Notes List</h5></div>
-                        <div class="column TC2"><a href='{{ route ('user.add.note')}}' class="btn btn-success TaskAddButton" >ADD NEW NOTE</a></div>
+                        <div class="column noteC1"><h5 class="mb-0 noteListTitle">All Notes List</h5></div>
+                        <div class="column noteC2"><a href='{{ route ('user.add.note')}}' class="btn btn-success noteAddButton" >ADD NEW NOTE</a></div>
                     </div>
                 </div>
             </div>

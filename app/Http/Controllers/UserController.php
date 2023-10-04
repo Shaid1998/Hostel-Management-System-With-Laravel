@@ -36,6 +36,10 @@ class UserController extends Controller
         return view('userPart.Notes.add_note');
     } // End Mehtod 
 
+    public function UserAddTask(){
+        return view('userPart.ToDoList.add_task');
+    } // End Mehtod 
+
     public function UserAddPhotoGallary(){
         return view('userPart.PhotoGallary.add_photo');
     } // End Mehtod 
@@ -146,7 +150,7 @@ class UserController extends Controller
             'alert-type' => 'success'
         );
 
-            return redirect()->route('user.notes.list')->with($notification);
+        return redirect()->route('user.notes.list')->with($notification);
     }//End Method
 
 
@@ -284,4 +288,21 @@ class UserController extends Controller
             return redirect()->route('user.own.photo.galary')->with($notification); 
        }
     } // End Mehtod 
+
+    public function UserAddTaskStore(Request $request){
+        $username = Auth::user()->username;
+        Task::insert([
+            'username' => $username,
+            'task_title' => $request->task_title,
+            'task' =>$request->task,
+            'set_date' =>$request->set_date,
+        ]);
+
+       $notification = array(
+            'message' => 'New Task Added Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('user.task.list')->with($notification);
+    }//End Method
 }
