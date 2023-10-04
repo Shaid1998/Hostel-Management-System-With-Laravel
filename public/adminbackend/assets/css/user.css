@@ -129,6 +129,44 @@
     color:aliceblue;
 }
 
+.taskPage{
+    background-image: linear-gradient(to right, rgb(119, 255, 0) , rgb(0, 8, 255))
+}
+
+.taskLC{
+    background-color: black
+}
+
+.TC1{
+    width: 50%;
+    padding-top:1.5rem;
+}
+
+.TC2{
+    width: 50%;
+    padding-top:2rem;
+    padding-left:22rem;
+}
+
+.TaskListTitle{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:italic;
+    font-size:50px;
+    color:rgb(22, 249, 6);
+    text-align:center;
+    font-weight:900
+}
+
+.TaskAddButton{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    border: 0;
+    border-radius: 25px;
+}
+
 .photoGText{
     font-family: 'Times New Roman', Times, serif;
     font-weight:500;

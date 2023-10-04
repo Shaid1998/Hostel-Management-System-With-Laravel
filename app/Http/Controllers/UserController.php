@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactForGuest;
 use App\Models\note;
+use App\Models\Task;
 use App\Models\User;
 use App\Models\UserPhoto;
 use Illuminate\Http\Request;
@@ -68,6 +69,12 @@ class UserController extends Controller
         $username = Auth::user()->username;
         $note = note::where('username',$username)->latest()->get();
         return view('userPart.Notes.notes',compact('note'));
+    }//End Method
+
+    public function UserTaskList(){
+        $username = Auth::user()->username;
+        $task = Task::where('username',$username)->latest()->get();
+        return view('userPart.ToDoList.Task',compact('task'));
     }//End Method
 
     public function UserProfileStore(Request $request){

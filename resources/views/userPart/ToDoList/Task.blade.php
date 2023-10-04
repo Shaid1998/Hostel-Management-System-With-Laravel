@@ -24,7 +24,7 @@
                             <th style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:20px;font-style:italic;color:rgb(251, 247, 21);width:30%;text-aligh:center;">Action</th>
                         </tr>
                     </thead>
-                    @foreach ($note as $note)
+                    @foreach ($task as $note)
                         <tbody>
                         <tr>
                             <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue;width:10%;text-aligh:center;">{{$note->id}}</td>

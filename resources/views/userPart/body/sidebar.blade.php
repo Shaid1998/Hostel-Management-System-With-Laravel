@@ -45,7 +45,7 @@
 				</a>
 			</li>
 			<li>
-				<a href=" ">
+				<a href="{{route('user.task.list')}}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-tasks"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">My ToDo List</div>
