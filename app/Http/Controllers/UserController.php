@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactForGuest;
 use App\Models\note;
+use App\Models\Notice;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\UserPhoto;
@@ -348,4 +349,13 @@ class UserController extends Controller
         return redirect()->back()->with($notification); 
 
     }// End Method
+
+    public function UserNoticeHome(){
+        $notice = Notice::where( function($query) {
+            $query->where('notice_for','all')
+                ->orWhere('notice_for','user');
+        })->latest()->get();
+        
+        return view('userPart.Notice.user_notice_view',compact('notice'));
+    }//End Method
 }

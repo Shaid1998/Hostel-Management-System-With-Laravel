@@ -138,7 +138,6 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/photo/gallary/{id}', [UserController::class, 'UserPhotoGallaryEdit'])->name('user.photo.gallary.edit');
     Route::get('/user/photo/gallary/delete/{id}', [UserController::class, 'UserPhotoGallaryDelete'])->name('user.photo.gallary.delete');
     Route::post('/user/photo/gallary/update', [UserController::class, 'UserPhotoGallaryUpdate'])->name('user.photo.gallary.update');
-
     Route::get('/user/task/list', [UserController::class, 'UserTaskList'])->name('user.task.list');
     Route::get('/user/add/task', [UserController::class, 'UserAddTask'])->name('user.task.add');
     Route::post('/user/add/task/store', [UserController::class, 'UserAddTaskStore'])->name('user.task.store');
@@ -146,6 +145,8 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/task/delete/{id}', [UserController::class, 'UserTaskDelete'])->name('user.task.delete');
     Route::post('/user/task/update', [UserController::class, 'UserTaskUpdate'])->name('user.task.update');
     Route::get('/user/task/view/{id}', [UserController::class, 'UserTaskView'])->name('user.task.view');
+    Route::get('/user/notice/home', [UserController::class, 'UserNoticeHome'])->name('user.notice.board');
+
 
 
 });

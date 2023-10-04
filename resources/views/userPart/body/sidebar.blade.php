@@ -38,7 +38,7 @@
 				</a>
 			</li>
 			<li>
-				<a href=" ">
+				<a href="{{route('user.notice.board')}}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i>
 					</div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Notice</div>
