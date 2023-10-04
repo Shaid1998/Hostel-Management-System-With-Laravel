@@ -109,8 +109,6 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/worker/pay/record/edit/{id}', [AdminController::class, 'AdminWorkerPaymentRecordEdit'])->name('worker.pay.record.edit');
     Route::get('/admin/worker/pay/record/delete/{id}', [AdminController::class, 'AdminWorkerPayRecordDelete'])->name('worker.pay.record.delete');
     Route::post('/admin/worker/pay/record/update', [AdminController::class, 'AdminWorkerPayRecordUpdate'])->name('worker.pay.record.update');
-
-
 });
 
 
@@ -153,8 +151,6 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::post('/user/send/message/store', [UserController::class, 'UserSendMessageStore'])->name('user.message.send.store');
     Route::get('/user/delete/message/{id}', [UserController::class, 'UserDeleteMessage'])->name('user.message.delete');
 
-
-
 });
 
 
@@ -172,6 +168,7 @@ Route::middleware(['auth','role:worker'])->group(function() {
     Route::get('/worker/change/password', [WorkerController::class, 'WorkerChangePassword'])->name('worker.change.password');
     Route::post('/worker/update/password', [WorkerController::class, 'WorkerUpdatePassword'])->name('worker.update.password');
     Route::get('/important/contact', [WorkerController::class, 'ImportantContact'])->name('important.contact');
+    Route::get('/worker/information', [WorkerController::class, 'WorkerInformation'])->name('worker.information');
 
 });
 

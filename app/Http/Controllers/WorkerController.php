@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactForGuest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +16,16 @@ class WorkerController extends Controller
 
     } // End Mehtod 
 
-    public function ImportantContact(){
+    public function WorkerInformation(){
+        $id = Auth::user()->id;
+        $workerData = User::find($id);
+        return view('worker.worker_information',compact('workerData'));
 
-        return view('worker.other.important_contact');
+    } // End Mehtod 
+
+    public function ImportantContact(){
+        $serviceall = ContactForGuest::all();
+        return view('worker.other.important_contact',compact('serviceall'));
 
     } // End Mehtod 
 
