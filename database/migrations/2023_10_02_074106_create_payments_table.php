@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
+            $table->string('username')->nullable();
             $table->string('person_name')->nullable();
             $table->string('payment_amount')->nullable();
             $table->enum('person_designation',['worker','user'])->default('user');
