@@ -33,7 +33,7 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue;width:30%;text-aligh:center;">{{$task->updated_at}}</td>
                             <td>
 								<a href='{{route('user.note.view',$task->id)}}' id="view" class="btn btn-success noteButton" >VIEW</a>
-								<a href='{{route('user.note.edit',$task->id)}}' id="update" class="btn btn-primary noteButton" >UPDATE</a>
+								<a href='{{route('user.task.edit',$task->id)}}' id="update" class="btn btn-primary noteButton" >UPDATE</a>
 								<a href='{{route('user.note.delete',$task->id)}}' id="delete" class="btn btn-danger noteButton" >DELETE</a>
 							</td>
                         </tr>

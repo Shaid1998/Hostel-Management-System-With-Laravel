@@ -145,6 +145,8 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/task/{id}', [UserController::class, 'UserTaskEdit'])->name('user.task.edit');
     Route::get('/user/task/delete/{id}', [UserController::class, 'UserTaskDelete'])->name('user.task.delete');
     Route::post('/user/task/update', [UserController::class, 'UserTaskUpdate'])->name('user.task.update');
+    Route::get('/user/task/view/{id}', [UserController::class, 'UserTaskView'])->name('user.task.view');
+
 
 });
 

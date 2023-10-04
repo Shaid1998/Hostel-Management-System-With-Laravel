@@ -164,6 +164,11 @@ class UserController extends Controller
         return view('userPart.Notes.edit_note',compact('note'));
     } // End Mehtod
 
+    public function UserTaskEdit($id){
+        $task = Task::findOrFail($id);
+        return view('userPart.ToDoList.edit_task',compact('task'));
+    } // End Mehtod
+
     public function UserPhotoGallaryEdit($id){
         $photo = UserPhoto::findOrFail($id);
         return view('userPart.PhotoGallary.edit_photo',compact('photo'));
@@ -304,5 +309,25 @@ class UserController extends Controller
         );
 
         return redirect()->route('user.task.list')->with($notification);
+    }//End Method
+
+    public function UserTaskUpdate(Request $request){
+        $username = Auth::user()->username;
+
+        $id = $request->id;
+
+        Task::findOrFail($id)->update([
+            'username' => $username,
+            'task_title' => $request->task_title,
+            'task' =>$request->task,
+            'set_date' =>$request->set_date,
+        ]);
+
+       $notification = array(
+            'message' => 'Task Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('user.task.list')->with($notification);
     }//End Method
 }
