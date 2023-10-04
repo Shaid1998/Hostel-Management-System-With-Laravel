@@ -31,37 +31,32 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i>
-					</div>
+				<a href="{{route('worker.notice.board')}}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Notice</div>
 				</a>
 			</li>
 			<li>
 				<a href="{{route('worker.task.list')}}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-tasks"></i>
-					</div>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-tasks"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Task</div>
 				</a>
 			</li>
 			<li>
 				<a href="#">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i>
-					</div>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Messages</div>
 				</a>
 			</li>
 			<li>
 				<a href="#">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-image"></i>
-					</div>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-image"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Photo Gallary</div>
 				</a>
 			</li>
 			<li>
 				<a href="{{ route ('important.contact')}}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i>
-					</div>
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Important Contact</div>
 				</a>
 			</li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\ContactForGuest;
+use App\Models\Notice;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -188,5 +189,14 @@ class WorkerController extends Controller
         return redirect()->back()->with($notification); 
 
     }// End Method
+
+    public function WorkerNoticeHome(){
+        $notice = Notice::where( function($query) {
+            $query->where('notice_for','all')
+                ->orWhere('notice_for','worker');
+        })->latest()->get();
+        
+        return view('userPart.Notice.user_notice_view',compact('notice'));
+    }//End Method
 }
 

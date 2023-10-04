@@ -176,5 +176,6 @@ Route::middleware(['auth','role:worker'])->group(function() {
     Route::get('/worker/task/delete/{id}', [WorkerController::class, 'WorkerTaskDelete'])->name('worker.task.delete');
     Route::post('/worker/task/update', [WorkerController::class, 'WorkerTaskUpdate'])->name('worker.task.update');
     Route::get('/worker/task/view/{id}', [WorkerController::class, 'WorkerTaskView'])->name('worker.task.view');
+    Route::get('/worker/notice/home', [WorkerController::class, 'WorkerNoticeHome'])->name('worker.notice.board');
 });
 
