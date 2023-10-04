@@ -9,6 +9,8 @@ use App\Models\UserPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Image;
+
 
 class WorkerController extends Controller
 {
@@ -115,7 +117,7 @@ class WorkerController extends Controller
 
 
     public function AllWorker(){
-        $alladminuser = User::where('role','admin')->latest()->get();
+        $alladminuser = User::where('role','worker')->latest()->get();
         return view('backend.admin.all_admin',compact('alladminuser'));
     }// End Mehtod 
 
@@ -225,7 +227,7 @@ class WorkerController extends Controller
     public function WorkerOwnPhotoGallary(){
         $username = Auth::user()->username;
         $photo = UserPhoto::where('username',$username)->latest()->get();
-        return view('userPart.PhotoGallary.user_photo',compact('photo'));
+        return view('worker.PhotoGallary.user_photo',compact('photo'));
     }//End Method
 
     public function WorkerAddPhotoGallaryStore(Request $request){
