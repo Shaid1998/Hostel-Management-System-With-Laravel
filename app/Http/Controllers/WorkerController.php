@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Task;
 use App\Models\ContactForGuest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -116,4 +116,77 @@ class WorkerController extends Controller
         $alladminuser = User::where('role','admin')->latest()->get();
         return view('backend.admin.all_admin',compact('alladminuser'));
     }// End Mehtod 
+
+
+
+    public function UserAddTask(){
+        return view('worker.Task.add_task');
+    } // End Mehtod 
+
+    public function UserTaskList(){
+        $username = Auth::user()->username;
+        $task = Task::where('username',$username)->latest()->get();
+        return view('worker.Task.Task',compact('task'));
+    }//End Method
+
+    public function UserTaskView($id){
+        $task = Task::findOrFail($id);
+        return view('worker.Task.view_task',compact('task'));
+    } // End Mehtod
+
+    public function UserTaskEdit($id){
+        $task = Task::findOrFail($id);
+        return view('userPart.ToDoList.edit_task',compact('task'));
+    } // End Mehtod
+
+    public function UserAddTaskStore(Request $request){
+        $username = Auth::user()->username;
+        Task::insert([
+            'username' => $username,
+            'task_title' => $request->task_title,
+            'task' =>$request->task,
+            'set_date' =>$request->set_date,
+        ]);
+
+       $notification = array(
+            'message' => 'New Task Added Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('user.task.list')->with($notification);
+    }//End Method
+
+    public function UserTaskUpdate(Request $request){
+        $username = Auth::user()->username;
+
+        $id = $request->id;
+
+        Task::findOrFail($id)->update([
+            'username' => $username,
+            'task_title' => $request->task_title,
+            'task' =>$request->task,
+            'set_date' =>$request->set_date,
+        ]);
+
+       $notification = array(
+            'message' => 'Task Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+            return redirect()->route('user.task.list')->with($notification);
+    }//End Method
+
+    public function UserTaskDelete($id){
+
+        Task::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Task Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
 }
+

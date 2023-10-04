@@ -38,10 +38,10 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-file-alt"></i>
+				<a href="{{route('worker.task.list')}}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-tasks"></i>
 					</div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Note</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;" class="menu-title">Task</div>
 				</a>
 			</li>
 			<li>
