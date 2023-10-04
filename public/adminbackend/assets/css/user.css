@@ -268,11 +268,27 @@
     font-size: 18px;
     font-style: italic;
     font-weight: 400;
-    color: aliceblue;
+    color: rgb(69, 227, 34);
 }
 
 .NoticeVHEAD{
     font-family: 'Times New Roman', Times, serif;
     font-size:20px;
     text-align:center;
+    color: rgb(109, 109, 207);
+}
+
+.col11{
+    width: 100%;
+    padding-top:1.5rem;
+}
+
+.TitileUN{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:60px;
+    color:rgb(240, 241, 247);
+    text-align:center;
+    background-image: linear-gradient(to right, rgb(255, 68, 0) , rgb(255, 0, 247));
 }
