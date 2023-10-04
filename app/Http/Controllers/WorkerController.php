@@ -119,27 +119,27 @@ class WorkerController extends Controller
 
 
 
-    public function UserAddTask(){
+    public function WorkerAddTask(){
         return view('worker.Task.add_task');
     } // End Mehtod 
 
-    public function UserTaskList(){
+    public function WorkerTaskList(){
         $username = Auth::user()->username;
         $task = Task::where('username',$username)->latest()->get();
         return view('worker.Task.Task',compact('task'));
     }//End Method
 
-    public function UserTaskView($id){
+    public function WorkerTaskView($id){
         $task = Task::findOrFail($id);
         return view('worker.Task.view_task',compact('task'));
     } // End Mehtod
 
-    public function UserTaskEdit($id){
+    public function WorkerTaskEdit($id){
         $task = Task::findOrFail($id);
-        return view('userPart.ToDoList.edit_task',compact('task'));
+        return view('worker.Task.edit_task',compact('task'));
     } // End Mehtod
 
-    public function UserAddTaskStore(Request $request){
+    public function WorkerAddTaskStore(Request $request){
         $username = Auth::user()->username;
         Task::insert([
             'username' => $username,
@@ -153,10 +153,10 @@ class WorkerController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('user.task.list')->with($notification);
+        return redirect()->route('worker.task.list')->with($notification);
     }//End Method
 
-    public function UserTaskUpdate(Request $request){
+    public function WorkerTaskUpdate(Request $request){
         $username = Auth::user()->username;
 
         $id = $request->id;
@@ -173,10 +173,10 @@ class WorkerController extends Controller
             'alert-type' => 'success'
         );
 
-            return redirect()->route('user.task.list')->with($notification);
+            return redirect()->route('worker.task.list')->with($notification);
     }//End Method
 
-    public function UserTaskDelete($id){
+    public function WorkerTaskDelete($id){
 
         Task::findOrFail($id)->delete();
 
