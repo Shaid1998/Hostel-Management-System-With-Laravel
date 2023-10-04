@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\ContactForGuest;
 use App\Models\Notice;
+use App\Models\Payment;
 use App\Models\User;
 use App\Models\UserPhoto;
 use Illuminate\Http\Request;
@@ -15,8 +16,9 @@ use Image;
 class WorkerController extends Controller
 {
     public function WorkerDashboard(){
-
-        return view('worker.worker_index');
+        $username = Auth::user()->username;
+        $payment = Payment::where('username',$username)->latest()->get();
+        return view('worker.worker_index',compact('payment'));
 
     } // End Mehtod 
 
