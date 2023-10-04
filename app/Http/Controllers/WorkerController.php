@@ -196,7 +196,7 @@ class WorkerController extends Controller
                 ->orWhere('notice_for','worker');
         })->latest()->get();
         
-        return view('userPart.Notice.user_notice_view',compact('notice'));
+        return view('worker.Notice.user_notice_view',compact('notice'));
     }//End Method
 }
 
