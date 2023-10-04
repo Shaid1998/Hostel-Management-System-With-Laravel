@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\ContactForGuest;
+use App\Models\GenarelMessage;
 use App\Models\Notice;
 use App\Models\Payment;
 use App\Models\User;
@@ -300,5 +301,44 @@ class WorkerController extends Controller
             return redirect()->route('worker.own.photo.galary')->with($notification); 
        }
     } // End Mehtod 
+
+    public function WorkerSendMessage(){
+        return view('worker.Message.add_message');
+    } // End Mehtod 
+
+    public function WorkerSendMessageHome(){
+        $username = Auth::user()->username;
+        $message = GenarelMessage::where('username',$username)->latest()->get();
+        return view('worker.Message.messages_view',compact('message'));
+    }//End Method
+
+    public function WorkerSendMessageStore(Request $request){
+        $username = Auth::user()->username;
+        GenarelMessage::insert([
+            'username' => $username,
+            'message' => $request->message,
+        ]);
+
+       $notification = array(
+            'message' => 'Message Send  Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('worker.send.message.home')->with($notification);
+    }//End Method
+
+    public function WorkerDeleteMessage($id){
+
+        GenarelMessage::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Message Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
 }
 
