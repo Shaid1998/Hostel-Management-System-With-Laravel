@@ -3,13 +3,11 @@
  
 
 <div class="page-content MainCont">
-	<div class="card radius-10 taskPage">
+	<div class="card radius-10 homePage">
 		<div class="card-body">
-			<div class="d-flex align-items-center">
+			<div class="align-items-center">
 				<div>
-					<h5 class="mb-0">Recent Payment Summary</h5>
-				</div>
-				<div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
+					<h5 class="mb-0 PT">Recent Payment Summary</h5>
 				</div>
 			</div>
 			<hr>

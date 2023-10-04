@@ -100,8 +100,10 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/new/user/payment/record/store', [AdminController::class, 'AdminNewUserPaymentRecordStore'])->name('admin.add.new.user.Payment.store');
     Route::get('/admin/user/payment/record/edit/{id}', [AdminController::class, 'AdminUserPaymentRecordEdit'])->name('user.payment.record.edit');
     Route::get('/admin/user/payment/record/delete/{id}', [AdminController::class, 'AdminUserPaymentRecordDelete'])->name('user.payment.record.delete');
+    Route::get('/admin/private/message/delete/{id}', [AdminController::class, 'DeletePrivateMessage'])->name('p.message.delete');
     Route::post('/admin/user/payment/record/update', [AdminController::class, 'AdminUserPaymentRecordUpdate'])->name('user.payment.record.update');
     Route::get('/admin/worker/payment/list', [AdminController::class, 'AdminWorkerPaymentList'])->name('admin.worker.pay');
+    Route::get('/admin/personal/message/list', [AdminController::class, 'AdminPersonalMessageList'])->name('private.message');
     Route::get('/admin/worker/pay/details', [AdminController::class, 'AdminWorkerPayDetails'])->name('add.worker.pay.details');
     Route::post('/admin/new/worker/pay/record/store', [AdminController::class, 'AdminNewWorkerPayRecordStore'])->name('admin.add.new.worker.pay.store');
     Route::get('/admin/worker/pay/record/edit/{id}', [AdminController::class, 'AdminWorkerPaymentRecordEdit'])->name('worker.pay.record.edit');

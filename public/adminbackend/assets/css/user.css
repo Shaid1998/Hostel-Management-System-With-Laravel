@@ -147,6 +147,19 @@
     background-image: linear-gradient(to right, rgb(119, 255, 0) , rgb(0, 8, 255))
 }
 
+.PT{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 60px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.homePage{
+    background-image: linear-gradient(to right, rgb(10, 10, 9) , rgb(0, 8, 255))
+}
+
 .taskLC{
     background-color: black
 }
@@ -290,5 +303,20 @@
     font-size:60px;
     color:rgb(240, 241, 247);
     text-align:center;
+    background-image: linear-gradient(to right, rgb(255, 68, 0) , rgb(255, 0, 247));
+}
+
+.PRIVATEMessage{
+    height: 70px;
+    background-image: linear-gradient(to right, rgb(255, 68, 0) , rgb(255, 0, 247));
+}
+
+.PMB{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+    width:20%;
     background-image: linear-gradient(to right, rgb(255, 68, 0) , rgb(255, 0, 247));
 }

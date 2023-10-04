@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Middleware\Role;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\ContactForGuest;
+use App\Models\GenarelMessage;
 use App\Models\HomeTopic;
 use App\Models\User;
 use App\Models\Message;
@@ -499,6 +500,13 @@ class AdminController extends Controller
 
     } // End Mehtod
 
+    
+    public function AdminPersonalMessageList(){
+        $messages = GenarelMessage::all();
+        return view('admin.private_message',compact('messages'));
+
+    } // End Mehtod
+
     public function AdminOtherHomeOptionEdit($id){
         $service = HomeTopic::findOrFail($id);
         return view('admin.other.edit_home_topic',compact('service'));
@@ -530,6 +538,19 @@ class AdminController extends Controller
 
         $notification = array(
             'message' => 'Service Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function DeletePrivateMessage($id){
+
+        GenarelMessage::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'message Deleted Successfully',
             'alert-type' => 'success'
         );
 
