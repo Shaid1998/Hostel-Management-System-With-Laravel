@@ -148,7 +148,8 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::get('/user/notice/home', [UserController::class, 'UserNoticeHome'])->name('user.notice.board');
     Route::get('/user/send/message/home', [UserController::class, 'UserSendMessageHome'])->name('user.send.message.home');
     Route::get('/user/send/message', [UserController::class, 'UserSendMessage'])->name('user.message.send');
-    Route::get('/user/delete/message', [UserController::class, 'UserDeleteMessage'])->name('user.message.delete');
+    Route::post('/user/send/message/store', [UserController::class, 'UserSendMessageStore'])->name('user.message.send.store');
+    Route::get('/user/delete/message/{id}', [UserController::class, 'UserDeleteMessage'])->name('user.message.delete');
 
 
 

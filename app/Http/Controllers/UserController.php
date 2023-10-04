@@ -42,6 +42,10 @@ class UserController extends Controller
         return view('userPart.ToDoList.add_task');
     } // End Mehtod 
 
+    public function UserSendMessage(){
+        return view('userPart.Message.add_message');
+    } // End Mehtod 
+
     public function UserAddPhotoGallary(){
         return view('userPart.PhotoGallary.add_photo');
     } // End Mehtod 
@@ -324,6 +328,21 @@ class UserController extends Controller
         return redirect()->route('user.task.list')->with($notification);
     }//End Method
 
+    public function UserSendMessageStore(Request $request){
+        $username = Auth::user()->username;
+        GenarelMessage::insert([
+            'username' => $username,
+            'message' => $request->message,
+        ]);
+
+       $notification = array(
+            'message' => 'Message Send  Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('user.send.message.home')->with($notification);
+    }//End Method
+
     public function UserTaskUpdate(Request $request){
         $username = Auth::user()->username;
 
@@ -350,6 +369,19 @@ class UserController extends Controller
 
         $notification = array(
             'message' => 'Task Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+    public function UserDeleteMessage($id){
+
+        GenarelMessage::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Message Deleted Successfully',
             'alert-type' => 'success'
         );
 
