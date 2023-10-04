@@ -26,7 +26,7 @@
 					@foreach ($payment as $payment)
                         <tbody>
                             <tr>
-                                <td style="width:5%;" class="noticeUView">{{$payment->id}}</td>
+                                <td style="width:5%;" class="noticeUView">{{$loop->iteration}}</td>
                                 <td style="width:10%;" class="noticeUView">{{$payment->created_at}}</td>
                                 <td style="width:10%;" class="noticeUView">{{$payment->payment_amount}}</td>
 								<td style="width:50%;" class="noticeUView">{!! nl2br ($payment->payment_details) !!}</td>

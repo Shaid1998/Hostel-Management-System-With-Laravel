@@ -27,7 +27,7 @@
 					@foreach ($notice as $notice)
                         <tbody>
                             <tr>
-                                <td style="width:5%;" class="noticeUView">{{$notice->id}}</td>
+                                <td style="width:5%;" class="noticeUView">{{$loop->iteration}}</td>
                                 <td style="width:10%;" class="noticeUView">{{$notice->created_at}}</td>
                                 <td style="width:10%;" class="noticeUView">{{$notice->updated_at}}</td>
                                 <td style="width:15%;" class="noticeUView">{{$notice->notice_topic}}</td>
