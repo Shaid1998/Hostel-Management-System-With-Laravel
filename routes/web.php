@@ -177,5 +177,12 @@ Route::middleware(['auth','role:worker'])->group(function() {
     Route::post('/worker/task/update', [WorkerController::class, 'WorkerTaskUpdate'])->name('worker.task.update');
     Route::get('/worker/task/view/{id}', [WorkerController::class, 'WorkerTaskView'])->name('worker.task.view');
     Route::get('/worker/notice/home', [WorkerController::class, 'WorkerNoticeHome'])->name('worker.notice.board');
+
+    Route::get('/worker/own/photo/gallary', [WorkerController::class, 'WorkerOwnPhotoGallary'])->name('worker.own.photo.galary');
+    Route::get('/worker/add/photo/gallary', [WorkerController::class, 'WorkerAddPhotoGallary'])->name('worker.photo.gallary.add');
+    Route::post('/worker/add/photo/gallary/store', [WorkerController::class, 'WorkerAddPhotoGallaryStore'])->name('worker.photo.gallary.store');
+    Route::get('/worker/photo/gallary/{id}', [WorkerController::class, 'WorkerPhotoGallaryEdit'])->name('worker.photo.gallary.edit');
+    Route::get('/worker/photo/gallary/delete/{id}', [WorkerController::class, 'WorkerPhotoGallaryDelete'])->name('worker.photo.gallary.delete');
+    Route::post('/worker/photo/gallary/update', [WorkerController::class, 'WorkerPhotoGallaryUpdate'])->name('worker.photo.gallary.update');
 });
 
