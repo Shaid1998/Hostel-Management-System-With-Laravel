@@ -1,5 +1,5 @@
-@extends('userPart.user_Dashboard')
-@section('user')
+@extends('worker.worker_dashboard')
+@section('worker')
 
 <div class="page-content taskPage">
     <div class="card radius-25">
@@ -8,7 +8,7 @@
                 <div class=" align-items-center">
                     <div class="row">
                         <div class="column TC1"><h5 class="mb-0 TaskListTitle">ALL MESSAGE</h5></div>
-                        <div class="column TC2"><a href='{{ route ('user.message.send')}}' class="btn btn-success TaskAddButton" >NEW MESSAGE</a></div>
+                        <div class="column TC2"><a href='{{ route ('worker.message.send')}}' class="btn btn-success TaskAddButton" >NEW MESSAGE</a></div>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue;width:70%;text-aligh:center;">{{$task->message}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-weight:700;font-size:15px;font-style:italic;color:aliceblue;width:10%;text-aligh:center;">{{$task->created_at}}</td>
                             <td style="width:10%;padding-left:2rem;">
-								<a href='{{route('user.message.delete',$task->id)}}' id="delete" class="btn btn-danger noteButton" >DELETE</a>
+								<a href='{{route('worker.message.delete',$task->id)}}' id="delete" class="btn btn-danger noteButton" >DELETE</a>
 							</td>
                         </tr>
                     </tbody>

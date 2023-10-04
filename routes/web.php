@@ -183,5 +183,10 @@ Route::middleware(['auth','role:worker'])->group(function() {
     Route::get('/worker/photo/gallary/{id}', [WorkerController::class, 'WorkerPhotoGallaryEdit'])->name('worker.photo.gallary.edit');
     Route::get('/worker/photo/gallary/delete/{id}', [WorkerController::class, 'WorkerPhotoGallaryDelete'])->name('worker.photo.gallary.delete');
     Route::post('/worker/photo/gallary/update', [WorkerController::class, 'WorkerPhotoGallaryUpdate'])->name('worker.photo.gallary.update');
+
+    Route::get('/worker/send/message/home', [UserController::class, 'WorkerSendMessageHome'])->name('worker.send.message.home');
+    Route::get('/worker/send/message', [UserController::class, 'WorkerSendMessage'])->name('worker.message.send');
+    Route::post('/worker/send/message/store', [UserController::class, 'WorkerSendMessageStore'])->name('worker.message.send.store');
+    Route::get('/worker/delete/message/{id}', [UserController::class, 'WorkerDeleteMessage'])->name('worker.message.delete');
 });
 
