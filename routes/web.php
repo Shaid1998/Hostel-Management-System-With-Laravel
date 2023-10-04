@@ -146,6 +146,9 @@ Route::middleware(['auth','role:user'])->group(function() {
     Route::post('/user/task/update', [UserController::class, 'UserTaskUpdate'])->name('user.task.update');
     Route::get('/user/task/view/{id}', [UserController::class, 'UserTaskView'])->name('user.task.view');
     Route::get('/user/notice/home', [UserController::class, 'UserNoticeHome'])->name('user.notice.board');
+    Route::get('/user/send/message/home', [UserController::class, 'UserSendMessageHome'])->name('user.send.message.home');
+    Route::get('/user/send/message', [UserController::class, 'UserSendMessage'])->name('user.message.send');
+    Route::get('/user/delete/message', [UserController::class, 'UserDeleteMessage'])->name('user.message.delete');
 
 
 

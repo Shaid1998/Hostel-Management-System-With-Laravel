@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactForGuest;
+use App\Models\GenarelMessage;
 use App\Models\note;
 use App\Models\Notice;
 use App\Models\Task;
@@ -80,6 +81,12 @@ class UserController extends Controller
         $username = Auth::user()->username;
         $task = Task::where('username',$username)->latest()->get();
         return view('userPart.ToDoList.Task',compact('task'));
+    }//End Method
+
+    public function UserSendMessageHome(){
+        $username = Auth::user()->username;
+        $message = GenarelMessage::where('username',$username)->latest()->get();
+        return view('userPart.Message.messages_view',compact('message'));
     }//End Method
 
     public function UserProfileStore(Request $request){
