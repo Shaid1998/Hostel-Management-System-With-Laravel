@@ -158,7 +158,10 @@
                         },
                         messages :{
                             name: {required : 'Please Enter Your Name',},
+                            email: {required : 'Please Enter Your email',},
+                            email: {required : 'Please Enter Your phone',},
                             address: {required : 'Please Enter Your Address',},
+                            message: {required : 'Please type your message',},
                             designation: {required : 'Please Enter Your Designation',},
                         },
                         errorElement : 'span', 
