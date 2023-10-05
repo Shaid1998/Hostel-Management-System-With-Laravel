@@ -27,7 +27,7 @@ class AuthenticatedSessionController extends Controller
     {
         $request->validate([
             'email' =>'required',
-            'password' =>'required',
+            'password' =>'required|min:8',
         ]);
 
         $request->authenticate();

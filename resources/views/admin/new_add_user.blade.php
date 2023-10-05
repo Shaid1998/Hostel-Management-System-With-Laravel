@@ -36,6 +36,7 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <input type="text" name="name" class="form-control"  required  />
                                     </div>
+                                    <span class="text-danger">@error('name'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -45,6 +46,7 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <input type="email" name="email" class="form-control"  required  />
                                     </div>
+                                    <span class="text-danger">@error('email'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -54,6 +56,7 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <input type="password" name="password" class="form-control"  required  />
                                     </div>
+                                    <span class="text-danger">@error('password'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -63,6 +66,7 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <input type="phone" name="phone" class="form-control"   required />
                                     </div>
+                                    <span class="text-danger">@error('phone'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -72,6 +76,7 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <input type="text" name="address" class="form-control"  required  />
                                     </div>
+                                    <span class="text-danger">@error('address'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -86,6 +91,7 @@
                                             <option value="user">user</option>
                                         </select>
                                     </div>
+                                    <span class="text-danger">@error('role'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -95,6 +101,7 @@
                                     <div class="form-group col-sm-9 text-secondary">
                                         <input type="text" name="payment_info" class="form-control"  required  />
                                     </div>
+                                    <span class="text-danger">@error('payment_info'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -108,6 +115,7 @@
                                             <option value="inactive">inactive</option>
                                         </select>
                                     </div>
+                                    <span class="text-danger">@error('status'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">
@@ -117,6 +125,7 @@
                                     <div class="col-sm-9 text-secondary">
                                         <input type="file" name="photo" class="form-control"  id="image" required  />
                                     </div>
+                                    <span class="text-danger">@error('photo'){{$message}}@enderror</span>
                                 </div>
 
                                 <div class="row mb-3">

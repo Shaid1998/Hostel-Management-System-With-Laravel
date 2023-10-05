@@ -99,6 +99,20 @@ class AdminController extends Controller
     } // End Mehtod
 
     public function NewUserStore(Request $request){
+        $request->validate([
+            'name' => 'required|max:255',
+            'username' => 'required|max:8',
+            'email' => 'required|email|unique|max:255',
+            'password' => 'required|min:8',
+            'phone' => 'required|max:12|min:10',
+            'address' => 'required|max:255',
+            'status' => 'required|max:255',
+            'payment_info' => 'required|max:255',
+            'photo' => 'required|max:255',
+        ]);
+
+
+
         $image = $request->file('photo');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
