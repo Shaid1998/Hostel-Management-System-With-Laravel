@@ -107,7 +107,6 @@
                 name: {required : true,}, 
                 phone: {required : true,}, 
                 position: {required : true,}, 
-                email: {required : true,}, 
             },
             messages :{
                 name: {required : 'Please Enter a Name', },

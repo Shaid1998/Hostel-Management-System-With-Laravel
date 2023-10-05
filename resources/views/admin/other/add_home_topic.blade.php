@@ -86,14 +86,16 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                service_name: {required : true,}, 
-                service_status: {required : true,}, 
-                service_cost: {required : true,}, 
+                home_title: {required : true,}, 
+                home_aub_Title: {required : true,}, 
+                Home_button_1: {required : true,}, 
+                home_button_2: {required : true,}, 
             },
             messages :{
-                service_name: {required : 'Please Enter Service Name',},
-                service_status: {required : 'Please Enter Service Status',},
-                service_cost: {required : 'Please Enter Service Cost',},
+                home_title: {required : 'Please enter a home title',}, 
+                home_aub_Title: {required : 'Please enter a home sub title',}, 
+                Home_button_1: {required : 'Please enter a home button 1 text',}, 
+                home_button_2: {required : 'Please enter a home button 2 text',}, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {

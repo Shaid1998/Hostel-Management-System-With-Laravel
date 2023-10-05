@@ -105,14 +105,16 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                payment_info: {
-                    required : true,
-                }, 
+                photo_title: {required : true,}, 
+                photo_credit: {required : true,}, 
+                photo_for: {required : true,}, 
+                photo: {required : true,}, 
             },
             messages :{
-                payment_info: {
-                    required : 'Please Enter Payment Statement',
-                },
+                photo_title: {required : 'Please enter a photo title',}, 
+                photo_credit: {required : 'Please enter a photo credit',}, 
+                photo_for: {required : 'Who is seen the photo',}, 
+                photo: {required : 'Please upload a photo',}, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {

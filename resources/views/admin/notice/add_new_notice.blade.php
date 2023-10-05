@@ -98,10 +98,16 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                payment_info: {required : true,}, 
+                notice_topic: {required : true,}, 
+                notice_details: {required : true,}, 
+                notice_for: {required : true,}, 
+                notice_Alart: {required : true,}, 
             },
             messages :{
-                payment_info: {required : 'Please Enter Payment Statement',},
+                notice_topic: {required : 'Please enter notice topic',}, 
+                notice_details: {required : 'Please enter notice',}, 
+                notice_for: {required : 'Please enter who will see this notice',}, 
+                notice_Alart: {required : 'Please enter notice alart level',},
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
