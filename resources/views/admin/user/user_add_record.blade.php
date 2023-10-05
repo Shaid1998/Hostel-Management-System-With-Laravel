@@ -133,14 +133,22 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                service_name: {required : true,}, 
-                service_status: {required : true,}, 
-                service_cost: {required : true,}, 
+                person_name: {required : true,}, 
+                payment_amount: {required : true,}, 
+                person_designation: {required : true,}, 
+                payment_details: {required : true,}, 
+                payment_medium: {required : true,}, 
+                account_number: {required : true,}, 
+                reference_code: {required : true,}, 
             },
             messages :{
-                service_name: {required : 'Please Enter Service Name',},
-                service_status: {required : 'Please Enter Service Status',},
-                service_cost: {required : 'Please Enter Service Cost',},
+                person_name: {required : 'Please enter person name',}, 
+                payment_amount: {required : 'Please enter payment amount',}, 
+                person_designation: {required : 'Please enter person designation',}, 
+                payment_details: {required : 'Please enter person details',}, 
+                payment_medium: {required : 'Please enter payment medium',}, 
+                account_number: {required : 'Please enter person account number',}, 
+                reference_code: {required : 'Please enter reference code as person username',}, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {

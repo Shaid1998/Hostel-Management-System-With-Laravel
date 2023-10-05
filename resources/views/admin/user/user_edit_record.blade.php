@@ -126,36 +126,4 @@
 	</div>
 </div>
 
-
-
-
-<script type="text/javascript">
-    $(document).ready(function (){
-        $('#myForm').validate({
-            rules: {
-                service_name: {required : true,}, 
-                service_status: {required : true,}, 
-                service_cost: {required : true,}, 
-            },
-            messages :{
-                service_name: {required : 'Please Enter Service Name',},
-                service_status: {required : 'Please Enter Service Status',},
-                service_cost: {required : 'Please Enter Service Cost',},
-            },
-            errorElement : 'span', 
-            errorPlacement: function (error,element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight : function(element, errorClass, validClass){
-                $(element).addClass('is-invalid');
-            },
-            unhighlight : function(element, errorClass, validClass){
-                $(element).removeClass('is-invalid');
-            },
-        });
-    });
-    
-</script>
-
 @endsection
