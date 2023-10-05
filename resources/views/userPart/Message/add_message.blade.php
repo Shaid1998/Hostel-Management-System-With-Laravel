@@ -50,14 +50,10 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                service_name: {required : true,}, 
-                service_status: {required : true,}, 
-                service_cost: {required : true,}, 
+                message: {required : true,}, 
             },
             messages :{
-                service_name: {required : 'Please Enter Service Name',},
-                service_status: {required : 'Please Enter Service Status',},
-                service_cost: {required : 'Please Enter Service Cost',},
+                service_name: {required : 'Please Enter Message',},
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
