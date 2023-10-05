@@ -78,14 +78,14 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                service_name: {required : true,}, 
-                service_status: {required : true,}, 
-                service_cost: {required : true,}, 
+                task_title: {required : true,}, 
+                task: {required : true,}, 
+                set_date: {required : true,}, 
             },
             messages :{
-                service_name: {required : 'Please Enter Service Name',},
-                service_status: {required : 'Please Enter Service Status',},
-                service_cost: {required : 'Please Enter Service Cost',},
+                task_title: {required : 'Please Enter Task Title',},
+                task: {required : 'Please Enter Your Task',},
+                set_date: {required : 'Please Enter Deadline Date',},
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
