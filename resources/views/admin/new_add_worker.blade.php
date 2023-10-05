@@ -150,14 +150,26 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                payment_info: {
-                    required : true,
-                }, 
+                name: {required : true,}, 
+                email: {required : true,}, 
+                password: {required : true,}, 
+                phone: {required : true,}, 
+                address: {required : true,}, 
+                role: {required : true,}, 
+                payment_info: {required : true,}, 
+                status: {required : true,}, 
+                photo: {required : true,}, 
             },
             messages :{
-                payment_info: {
-                    required : 'Please Enter Payment Statement',
-                },
+                name: {required : 'Please Enter Name',},
+                email: {required : 'Please Enter email',},
+                password : {required : 'Please Enter password',},
+                phone : {required : 'Please Enter Phone Number',},
+                address : {required : 'Please Enter Address',},
+                role : {required : 'Please Select a role',},
+                payment_info : {required : 'Please Enter Payment Statement',},
+                status : {required : 'Please Select a status',},
+                photo : {required : 'Please Select a photo',},
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
