@@ -68,14 +68,12 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                service_name: {required : true,}, 
-                service_status: {required : true,}, 
-                service_cost: {required : true,}, 
+                note_title: {required : true,}, 
+                note_text: {required : true,}, 
             },
             messages :{
-                service_name: {required : 'Please Enter Service Name',},
-                service_status: {required : 'Please Enter Service Status',},
-                service_cost: {required : 'Please Enter Service Cost',},
+                note_title: {required : 'Please Enter note title',},
+                note_text: {required : 'Please Enter note',},
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {

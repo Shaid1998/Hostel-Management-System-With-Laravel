@@ -88,14 +88,14 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                payment_info: {
-                    required : true,
-                }, 
+                photo_title: {required : true,}, 
+                photo_text: {required : true,}, 
+                photo: {required : true,}, 
             },
             messages :{
-                payment_info: {
-                    required : 'Please Enter Payment Statement',
-                },
+                photo_title: {required : 'Please enter a photo title',}, 
+                photo_text: {required : 'Please enter a photo text',}, 
+                photo: {required : 'Please upload a photo',}, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
