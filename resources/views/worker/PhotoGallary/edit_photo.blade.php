@@ -85,40 +85,6 @@
 </div>
 
 
-
-
-<script type="text/javascript">
-    $(document).ready(function (){
-        $('#myForm').validate({
-            rules: {
-                photo_title: {
-                    required : false,
-                }, 
-            },
-            messages :{
-                photo_title: {
-                    required : 'Please Enter Photo Title',
-                },
-            },
-            errorElement : 'span', 
-            errorPlacement: function (error,element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight : function(element, errorClass, validClass){
-                $(element).addClass('is-invalid');
-            },
-            unhighlight : function(element, errorClass, validClass){
-                $(element).removeClass('is-invalid');
-            },
-        });
-    });
-    
-</script>
-
-
-
-
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#image').change(function(e){

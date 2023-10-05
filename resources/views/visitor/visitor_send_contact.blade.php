@@ -150,10 +150,10 @@
                     $('#myForm').validate({
                         rules: {
                             name: {required : true,}, 
-                            email: {required : false,}, 
-                            phone: {required : false,}, 
+                            email: {required : true,}, 
+                            phone: {required : true,}, 
                             address: {required : true,}, 
-                            message: {required : false,}, 
+                            message: {required : true,}, 
                             designation: {required : true,}, 
                         },
                         messages :{
